@@ -1,0 +1,581 @@
+@prefix : <http://purl.org/nsoluti/oqs#>.
+@prefix gufo: <http://purl.org/nemo/gufo#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<http://purl.org/nsoluti/oqs> rdf:type owl:Ontology;
+    owl:imports gufo:.
+:Instrument rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Instrument"@en.
+:Detector rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Detector"@en.
+:Person rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Person"@en.
+:Questionnaire rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Questionnaire"@en.
+:QuestionnaireValidation rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "QuestionnaireValidation"@en.
+:QuestionnaireValidationType rdf:type owl:Class, gufo:AbstractIndividualType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:QualityValue;
+    owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:oneOf (:ContentValidation :SemanticValidation :PreTest :MathematicalValidation :ConstructValidity :CriterionValidity :FaceValidity :ReliabilityTesting :CulturalValidation :OtherValidation)
+].
+:ContentValidation rdf:type :QuestionnaireValidationType;
+    rdf:label "[object Object]".
+:SemanticValidation rdf:type :QuestionnaireValidationType;
+    rdf:label "[object Object]".
+:PreTest rdf:type :QuestionnaireValidationType;
+    rdf:label "[object Object]".
+:MathematicalValidation rdf:type :QuestionnaireValidationType;
+    rdf:label "[object Object]".
+:ConstructValidity rdf:type :QuestionnaireValidationType;
+    rdf:label "[object Object]".
+:CriterionValidity rdf:type :QuestionnaireValidationType;
+    rdf:label "[object Object]".
+:FaceValidity rdf:type :QuestionnaireValidationType;
+    rdf:label "[object Object]".
+:ReliabilityTesting rdf:type :QuestionnaireValidationType;
+    rdf:label "[object Object]".
+:CulturalValidation rdf:type :QuestionnaireValidationType;
+    rdf:label "[object Object]".
+:OtherValidation rdf:type :QuestionnaireValidationType;
+    rdf:label "[object Object]".
+:QuestionnaireValidationType rdfs:label "QuestionnaireValidationType"@en.
+:QuestionnaireStatus rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "QuestionnaireStatus"@en.
+:QuestionnaireStatusType rdf:type owl:Class, gufo:AbstractIndividualType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:QualityValue;
+    owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:oneOf (:QuestionnaireDraft :QuestionnairePublished :QuestionnaireWithdrawn)
+].
+:QuestionnaireDraft rdf:type :QuestionnaireStatusType;
+    rdf:label "[object Object]".
+:QuestionnairePublished rdf:type :QuestionnaireStatusType;
+    rdf:label "[object Object]".
+:QuestionnaireWithdrawn rdf:type :QuestionnaireStatusType;
+    rdf:label "[object Object]".
+:QuestionnaireStatusType rdfs:label "QuestionnaireStatusType"@en.
+:QuestionnaireLicence rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "QuestionnaireLicence"@en.
+:Authorship rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Authorship"@en.
+:Section rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:VariableCollection;
+    rdfs:label "Section"@en.
+:Question rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Question"@en.
+:QuestionOrigin rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "QuestionOrigin"@en.
+:OpenQuestion rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "OpenQuestion"@en.
+:ClosedQuestion rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "ClosedQuestion"@en.
+:Variable rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Variable"@en.
+:LevelsOfMeasurement rdf:type owl:Class, gufo:AbstractIndividualType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:QualityValue;
+    owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:oneOf (:Nominal :Ordinal :Interval :Ratio)
+].
+:Nominal rdf:type :LevelsOfMeasurement;
+    rdf:label "[object Object]".
+:Ordinal rdf:type :LevelsOfMeasurement;
+    rdf:label "[object Object]".
+:Interval rdf:type :LevelsOfMeasurement;
+    rdf:label "[object Object]".
+:Ratio rdf:type :LevelsOfMeasurement;
+    rdf:label "[object Object]".
+:LevelsOfMeasurement rdfs:label "LevelsOfMeasurement"@en.
+:Scale rdf:type owl:Class, gufo:AbstractIndividualType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:QualityValue;
+    owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:oneOf (:ChecklistScale :ComparativeScale :ConstantSumScale :DichotomousScale :ForcedRatingScale :GraphicRatingScale :GuttmanScale :IntervalQuestionScale :IpsativeScale :LikertScale :LikertTypeScale :MultipleChoiceScale :MultipleRatingListScale :NominalQuestionScale :PairedComparisonScale :SemanticDifferentialScale :SimpleCategoricalScale :StapelScale :ThurstoneScale :VisualAnalogScale)
+].
+:ChecklistScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:ComparativeScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:ConstantSumScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:DichotomousScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:ForcedRatingScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:GraphicRatingScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:GuttmanScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:IntervalQuestionScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:IpsativeScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:LikertScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:LikertTypeScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:MultipleChoiceScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:MultipleRatingListScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:NominalQuestionScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:PairedComparisonScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:SemanticDifferentialScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:SimpleCategoricalScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:StapelScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:ThurstoneScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:VisualAnalogScale rdf:type :Scale;
+    rdf:label "[object Object]".
+:Scale rdfs:label "Scale"@en.
+:ResponseOptions rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:VariableCollection;
+    rdfs:label "ResponseOptions"@en.
+:ResponseOption rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "ResponseOption"@en.
+:OriginType rdf:type owl:Class, gufo:AbstractIndividualType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:QualityValue;
+    owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:oneOf (:Original :LiteralCopy :AdaptToContext :ReplaceTerms :Translation)
+].
+:Original rdf:type :OriginType;
+    rdf:label "[object Object]".
+:LiteralCopy rdf:type :OriginType;
+    rdf:label "[object Object]".
+:AdaptToContext rdf:type :OriginType;
+    rdf:label "[object Object]".
+:ReplaceTerms rdf:type :OriginType;
+    rdf:label "[object Object]".
+:Translation rdf:type :OriginType;
+    rdf:label "[object Object]".
+:OriginType rdfs:label "OriginType"@en.
+:QuestionBranching rdf:type owl:Class, gufo:SituationType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Situation;
+    rdfs:label "QuestionBranching"@en.
+:Questionnaire rdfs:subClassOf :Instrument.
+:Question rdfs:subClassOf :Detector.
+:OpenQuestion rdfs:subClassOf :Question.
+:ClosedQuestion rdfs:subClassOf :Question.
+:hasName rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasName"@en.
+:hasUri rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasUri"@en.
+:hasIdentifier rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasIdentifier"@en.
+:hasOrcid rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasOrcid"@en.
+:hasLattes rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasLattes"@en.
+:hasEmail rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasEmail"@en.
+:hasFiliation rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasFiliation"@en.
+:hasAuthor rdfs:domain :Questionnaire;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasAuthor"@en.
+:hasVersion rdfs:domain :Questionnaire;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasVersion"@en.
+:hasName_1 rdfs:domain :Questionnaire;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasName"@en.
+:hasDescription rdfs:domain :Questionnaire;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasDescription"@en.
+:hasValidation rdfs:domain :Questionnaire;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasValidation"@en.
+:hasBibliograficReference rdfs:domain :Questionnaire;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasBibliograficReference"@en.
+:hasIdentifier_1 rdfs:domain :Questionnaire;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasIdentifier"@en.
+:hasUri_1 rdfs:domain :Questionnaire;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasUri"@en.
+:hasAcronym rdfs:domain :Questionnaire;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasAcronym"@en.
+:hasBeginPointInXSDDdate rdfs:domain :Questionnaire;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasBeginPointInXSDDdate"@en.
+:hasEndPointInXSDDdate rdfs:domain :Questionnaire;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasEndPointInXSDDdate"@en.
+:hasDescription_1 rdfs:domain :QuestionnaireValidation;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasDescription"@en.
+:hasMethod rdfs:domain :QuestionnaireValidation;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasMethod"@en.
+:hasIdentifier_2 rdfs:domain :QuestionnaireValidation;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasIdentifier"@en.
+:hasUri_2 rdfs:domain :QuestionnaireValidation;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasUri"@en.
+:hasBibliograficReference_1 rdfs:domain :QuestionnaireValidation;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasBibliograficReference"@en.
+:hasQuestionnaireValidationType rdfs:domain :QuestionnaireValidation;
+    rdfs:range :QuestionnaireValidationType;
+    rdf:type owl:ObjectProperty;
+    rdfs:subPropertyOf gufo:hasReifiedQualityValue;
+    rdfs:label "hasQuestionnaireValidationType"@en.
+:hasQuestionnaireStatusType rdfs:domain :QuestionnaireStatus;
+    rdfs:range :QuestionnaireStatusType;
+    rdf:type owl:ObjectProperty;
+    rdfs:subPropertyOf gufo:hasReifiedQualityValue;
+    rdfs:label "hasQuestionnaireStatusType"@en.
+:hasLicenceName rdfs:domain :QuestionnaireLicence;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasLicenceName"@en.
+:hasLicenceDescription rdfs:domain :QuestionnaireLicence;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasLicenceDescription"@en.
+:hasTitle rdfs:domain :Section;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasTitle"@en.
+:hasInstructions rdfs:domain :Section;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasInstructions"@en.
+:hasPrimming rdfs:domain :Section;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasPrimming"@en.
+:hasIdentifier_3 rdfs:domain :Section;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasIdentifier"@en.
+:hasUri_3 rdfs:domain :Section;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasUri"@en.
+:hasAcronym_1 rdfs:domain :Section;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasAcronym"@en.
+:hasBeginPointInXSDDdate_1 rdfs:domain :Section;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasBeginPointInXSDDdate"@en.
+:hasText rdfs:domain :Question;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasText"@en.
+:hasHypertext rdfs:domain :Question;
+    rdfs:range xsd:boolean;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasHypertext"@en.
+:hasMarkdowntext rdfs:domain :Question;
+    rdfs:range xsd:boolean;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasMarkdowntext"@en.
+:hasName_2 rdfs:domain :Question;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasName"@en.
+:hasUri_4 rdfs:domain :Question;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasUri"@en.
+:hasIdentifier_4 rdfs:domain :Question;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasIdentifier"@en.
+:hasBeginPointInXSDDdate_2 rdfs:domain :Question;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasBeginPointInXSDDdate"@en.
+:isSkippable rdfs:domain :Question;
+    rdfs:range xsd:boolean;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "isSkippable"@en.
+:hasDataElementDescription rdfs:domain :Question;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasDataElementDescription"@en.
+:hasAcronym_2 rdfs:domain :Question;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasAcronym"@en.
+:hasOriginType rdfs:domain :QuestionOrigin;
+    rdfs:range :OriginType;
+    rdf:type owl:ObjectProperty;
+    rdfs:subPropertyOf gufo:hasReifiedQualityValue;
+    rdfs:label "hasOriginType"@en.
+:hasText_1 rdfs:domain :Variable;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasText"@en.
+:hasHypertext_1 rdfs:domain :Variable;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasHypertext"@en.
+:hasName_3 rdfs:domain :Variable;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasName"@en.
+:hasUri_5 rdfs:domain :Variable;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasUri"@en.
+:hasIdentifier_5 rdfs:domain :Variable;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasIdentifier"@en.
+:hasBeginPointInXSDDdate_3 rdfs:domain :Variable;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasBeginPointInXSDDdate"@en.
+:hasDataElementDescription_1 rdfs:domain :Variable;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasDataElementDescription"@en.
+:hasLevelOfMeasurement rdfs:domain :Variable;
+    rdfs:range :LevelsOfMeasurement;
+    rdf:type owl:ObjectProperty;
+    rdfs:subPropertyOf gufo:hasReifiedQualityValue;
+    rdfs:label "hasLevelOfMeasurement"@en.
+:hasScale rdfs:domain :Variable;
+    rdfs:range :Scale;
+    rdf:type owl:ObjectProperty;
+    rdfs:subPropertyOf gufo:hasReifiedQualityValue;
+    rdfs:label "hasScale"@en.
+:hasExpectedFormat rdfs:domain :Variable;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasExpectedFormat"@en.
+:hasMinimumValue rdfs:domain :Variable;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasMinimumValue"@en.
+:hasMaximumValue rdfs:domain :Variable;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasMaximumValue"@en.
+:hasUnit rdfs:domain :Variable;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasUnit"@en.
+:hasUri_6 rdfs:domain :ResponseOptions;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasUri"@en.
+:hasIdentifier_6 rdfs:domain :ResponseOptions;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasIdentifier"@en.
+:hasBeginPointInXSDDdate_4 rdfs:domain :ResponseOptions;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasBeginPointInXSDDdate"@en.
+:hasText_2 rdfs:domain :ResponseOption;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasText"@en.
+:hasHypertext_2 rdfs:domain :ResponseOption;
+    rdfs:range xsd:boolean;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasHypertext"@en.
+:hasUri_7 rdfs:domain :ResponseOption;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasUri"@en.
+:hasBeginPointInXSDDdate_5 rdfs:domain :ResponseOption;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasBeginPointInXSDDdate"@en.
+:hasValue rdfs:domain :ResponseOption;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasValue"@en.
+:hasDataElementDescription_2 rdfs:domain :ResponseOption;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasDataElementDescription"@en.
+:hasCondition rdfs:domain :QuestionBranching;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasCondition"@en.
+:participatedInValidationOfQuestionnaire rdf:type owl:ObjectProperty;
+    rdfs:domain :QuestionnaireValidation;
+    rdfs:range :Questionnaire;
+    rdfs:label "participatedInValidationOfQuestionnaire"@en;
+    rdfs:subPropertyOf gufo:participatedIn.
+:questionnaireStatusInheresInQuestionnaire rdf:type owl:ObjectProperty;
+    rdfs:domain :QuestionnaireStatus;
+    rdfs:range :Questionnaire;
+    rdfs:subPropertyOf gufo:inheresIn.
+:characterizationQuestionnaireLicence rdf:type owl:ObjectProperty;
+    rdfs:domain :QuestionnaireLicence;
+    rdfs:range :Questionnaire;
+    rdfs:label "characterizationQuestionnaireLicence"@en;
+    rdfs:subPropertyOf gufo:inheresIn.
+:authorshipMediatesQuestionnaire rdf:type owl:ObjectProperty;
+    rdfs:domain :Authorship;
+    rdfs:range :Questionnaire;
+    rdfs:subPropertyOf gufo:mediates.
+:authorshipMediatesPerson rdf:type owl:ObjectProperty;
+    rdfs:domain :Authorship;
+    rdfs:range :Person;
+    rdfs:subPropertyOf gufo:mediates.
+:sectionIsCollectionMemberOfQuestionnaire rdf:type owl:ObjectProperty;
+    rdfs:domain :Section;
+    rdfs:range :Questionnaire;
+    rdfs:subPropertyOf gufo:isCollectionMemberOf.
+:questionIsComponentOfSection rdf:type owl:ObjectProperty;
+    rdfs:domain :Question;
+    rdfs:range :Section;
+    rdfs:subPropertyOf gufo:isComponentOf.
+:questionOriginInheresInQuestion rdf:type owl:ObjectProperty;
+    rdfs:domain :QuestionOrigin;
+    rdfs:range :Question;
+    rdfs:subPropertyOf gufo:inheresIn.
+:variableIsComponentOfQuestion rdf:type owl:ObjectProperty;
+    rdfs:domain :Variable;
+    rdfs:range :Question;
+    rdfs:subPropertyOf gufo:isComponentOf.
+:responseOptionsIsComponentOfClosedQuestion rdf:type owl:ObjectProperty;
+    rdfs:domain :ResponseOptions;
+    rdfs:range :ClosedQuestion;
+    rdfs:subPropertyOf gufo:isComponentOf.
+:responseOptionIsCollectionMemberOfResponseOptions rdf:type owl:ObjectProperty;
+    rdfs:domain :ResponseOption;
+    rdfs:range :ResponseOptions;
+    rdfs:subPropertyOf gufo:isCollectionMemberOf.
+:hasDerivedFromQuestion rdf:type owl:ObjectProperty;
+    rdfs:domain :QuestionOrigin;
+    rdfs:range :Question;
+    rdfs:label "hasDerivedFromQuestion"@en.
+:hasDerivedFromQuestionnaire rdf:type owl:ObjectProperty;
+    rdfs:domain :Questionnaire;
+    rdfs:range :Questionnaire;
+    rdfs:label "hasDerivedFromQuestionnaire"@en.
+:fromQuestion rdf:type owl:ObjectProperty;
+    rdfs:domain :QuestionBranching;
+    rdfs:range :Question;
+    rdfs:label "fromQuestion"@en.
+:toQuestion rdf:type owl:ObjectProperty;
+    rdfs:domain :QuestionBranching;
+    rdfs:range :Question;
+    rdfs:label "toQuestion"@en.
