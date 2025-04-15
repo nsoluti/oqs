@@ -44,7 +44,9 @@
     opm:hasOntologyStatus <http://purl.org/net/registry/ontology/term/Stable> ; 
     mod:status "Stable" ;
     dc:status "Stable"@en ;
-    dct:status "Stable"@en ;    
+    dct:status "Stable"@en ; 
+    bibo:status bibo:published ;
+
     dct:source <https://github.com/nsoluti/oqs> ;
     
     owl:priorVersion <http://purl.org/nsoluti/oqs#/0.9.0> ;  # If there was a prior 
@@ -53,6 +55,7 @@
     vann:preferredNamespacePrefix "oqs"@en ;
     vann:preferredNamespaceUri "https://purl.org/nsoluti/oqs#"^^xsd:anyURI ;
     rdfs:comment """  Cite this work as:     This work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.  For the source repository, see: <https://github.com/nsoluti/oqs>"""@en .
+
 :Instrument rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Instrument"@en.
@@ -695,6 +698,7 @@
 :questionOriginInheresInQuestion rdf:type owl:ObjectProperty;
     rdfs:domain :QuestionOrigin;
     rdfs:range :Question;
+    rdfs:label "questionOriginInheresInQuestion"@en;
     rdfs:subPropertyOf gufo:inheresIn.
 :variableIsComponentOfQuestion rdf:type owl:ObjectProperty;
     rdfs:domain :Variable;
