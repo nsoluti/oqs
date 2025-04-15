@@ -17,18 +17,17 @@
 @base <http://purl.org/nsoluti/oqs#> .
 
 <http://purl.org/nsoluti/oqs#> rdf:type owl:Ontology ;
-    owl:versionIRI <http://purl.org/nsoluti/oqs#/1.0.0> ;
+    owl:versionIRI <http://purl.org/nsoluti/oqs/1.0.0> ;
     owl:versionInfo "1.0.0"@en ;
     dc:creator "Marques, Yuri Bento" ,
                "Bax, Marcello Peixoto" ,
                "Pinheiro, Paulo" ;
     dc:title "OQS: Ontology for Questionnaires Sharing"@en ;
-    dct:bibliographicCitation "Marques, Yuri Bento, Marcello Peixoto Bax, and Paulo Pinheiro. \"OQS: Ontology for Questionnaires Sharing.\" "@en ;
+    dct:bibliographicCitation "Marques, Yuri Bento, Marcello Peixoto Bax, and Paulo Pinheiro. \"OQS: Ontology for Questionnaires Sharing.\", 2025, http://purl.org/nsoluti/doc/oqs ."@en ;
     dct:created "2019-11-11"^^xsd:date ;
     dct:modified "2021-11-01"^^xsd:date ;
     dct:license <http://creativecommons.org/licenses/by/4.0/legalcode> ;
-
-
+    dcterms:publisher <https://nsoluti.ifnmg.edu.br> ;
     dct:issued "2021-11-01"^^xsd:date ;
     dct:publisher [
         a foaf:Organization ;
@@ -42,22 +41,13 @@
     # Add logo
     foaf:logo <https://raw.githubusercontent.com/nsoluti/oqs/main/logo.png> ;  # Update with actual logo URL
     
-    # Add status
     opm:hasOntologyStatus <http://purl.org/net/registry/ontology/term/Stable> ; 
     mod:status "Stable" ;
-
-    # Or using a custom approach with literals
     dc:status "Stable"@en ;
-    
-    # Add source
     dct:source <https://github.com/nsoluti/oqs> ;
     
-    # Add optional metadata
-    # Previous version (if applicable)
-    owl:priorVersion <http://purl.org/nsoluti/oqs#/0.9.0> ;  # If there was a prior version
-    
-    # Backward compatibility information
-    owl:backwardCompatibleWith <http://purl.org/nsoluti/oqs#/0.9.0> ;  # If compatible with prior version
+    owl:priorVersion <http://purl.org/nsoluti/oqs#/0.9.0> ;  # If there was a prior 
+    owl:backwardCompatibleWith <http://purl.org/nsoluti/oqs#/0.9.0> ;  # If 
     
     vann:preferredNamespacePrefix "oqs"@en ;
     vann:preferredNamespaceUri "https://purl.org/nsoluti/oqs#"^^xsd:anyURI ;
@@ -517,7 +507,7 @@
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasDataElementDescription"@en.
 :hasOrder rdfs:domain :Question;
-    rdfs:range :number;
+    rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasOrder"@en.
@@ -683,10 +673,12 @@
 :authorshipMediatesQuestionnaire rdf:type owl:ObjectProperty;
     rdfs:domain :Authorship;
     rdfs:range :Questionnaire;
+    rdfs:label "authorshipMediatesQuestionnaire"@en;
     rdfs:subPropertyOf gufo:mediates.
 :authorshipMediatesAuthor rdf:type owl:ObjectProperty;
     rdfs:domain :Authorship;
     rdfs:range :Author;
+    rdfs:label "authorshipMediatesAuthor"@en;
     rdfs:subPropertyOf gufo:mediates.
 :sectionIsCollectionMemberOfQuestionnaire rdf:type owl:ObjectProperty;
     rdfs:domain :Section;
