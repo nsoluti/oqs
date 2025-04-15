@@ -10,30 +10,58 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix opm: <http://openprovenance.org/model/opmo#> .
+@prefix mod: <http://www.isibang.ac.in/ns/mod#> .
 @base <http://purl.org/nsoluti/oqs#> .
 
 <http://purl.org/nsoluti/oqs#> rdf:type owl:Ontology ;
     owl:versionIRI <http://purl.org/nsoluti/oqs#/1.0.0> ;
     owl:versionInfo "1.0.0"@en ;
     dc:creator "Marques, Yuri Bento" ,
-                "Bax, Marcello Peixoto" ,
-                "Pinheiro, Paulo" ;
+               "Bax, Marcello Peixoto" ,
+               "Pinheiro, Paulo" ;
     dc:title "OQS: Ontology for Questionnaires Sharing"@en ;
     dct:bibliographicCitation "Marques, Yuri Bento, Marcello Peixoto Bax, and Paulo Pinheiro. \"OQS: Ontology for Questionnaires Sharing.\" "@en ;
     dct:created "2019-11-11"^^xsd:date ;
     dct:modified "2021-11-01"^^xsd:date ;
-    dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/legalcode> ;
+
+
+    dct:issued "2021-11-01"^^xsd:date ;
+    dct:publisher [
+        a foaf:Organization ;
+        foaf:name "NSoluti Research Group" ;
+        foaf:homepage <https://github.com/nsoluti>
+    ] ;
+    
+    # Add DOI
+    bibo:doi "10.5281/zenodo.XXXXXX" ;  # Replace XXXXXX with your actual DOI number
+    
+    # Add logo
+    foaf:logo <https://raw.githubusercontent.com/nsoluti/oqs/main/logo.png> ;  # Update with actual logo URL
+    
+    # Add status
+    opm:hasOntologyStatus <http://purl.org/net/registry/ontology/term/Stable> ; 
+    mod:status "Stable" ;
+
+    # Or using a custom approach with literals
+    dc:status "Stable"@en ;
+    
+    # Add source
+    dct:source <https://github.com/nsoluti/oqs> ;
+    
+    # Add optional metadata
+    # Previous version (if applicable)
+    owl:priorVersion <http://purl.org/nsoluti/oqs#/0.9.0> ;  # If there was a prior version
+    
+    # Backward compatibility information
+    owl:backwardCompatibleWith <http://purl.org/nsoluti/oqs#/0.9.0> ;  # If compatible with prior version
+    
     vann:preferredNamespacePrefix "oqs"@en ;
-    vann:preferredNamespaceUri "http://purl.org/nsoluti/oqs#"^^xsd:anyURI ;
-    rdfs:comment """
-
-Cite this work as: 
-
-
-
-This work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.
-
-For the source repository, see: <https://github.com/nsoluti/oqs>"""@en .
+    vann:preferredNamespaceUri "https://purl.org/nsoluti/oqs#"^^xsd:anyURI ;
+    rdfs:comment """  Cite this work as:     This work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.  For the source repository, see: <https://github.com/nsoluti/oqs>"""@en .
 :Instrument rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Instrument"@en.
