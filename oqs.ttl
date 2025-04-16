@@ -38,8 +38,6 @@
     # Add logo
     foaf:logo <https://raw.githubusercontent.com/nsoluti/oqs/main/logo.png> ;  # Update with actual logo URL
     
-    adms:status "Stable"@en ;
-
     dcterms:source <https://github.com/nsoluti/oqs> ;
     
     owl:priorVersion <http://purl.org/nsoluti/oqs#/0.9.0> ;  # If there was a prior 
@@ -48,6 +46,8 @@
     vann:preferredNamespacePrefix "oqs"@en ;
     vann:preferredNamespaceUri "https://purl.org/nsoluti/oqs#"^^xsd:anyURI ;
     rdfs:comment """  Cite this work as:     This work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.  For the source repository, see: <https://github.com/nsoluti/oqs>"""@en .
+
+    <http://purl.org/nsoluti/oqs#> adms:status "Stable"@en .
 
 :Instrument rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
