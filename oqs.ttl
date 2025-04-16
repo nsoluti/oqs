@@ -24,15 +24,11 @@
                "Pinheiro, Paulo" ;
     dc:title "OQS: Ontology for Questionnaires Sharing"@en ;
     dcterms:bibliographicCitation "Marques, Yuri Bento, Marcello Peixoto Bax, and Paulo Pinheiro. \"OQS: Ontology for Questionnaires Sharing.\", 2025, http://purl.org/nsoluti/doc/oqs ."@en ;
-    dcterms:created "2025-04-15"^^xsd:date ;
-    dcterms:modified "2025-04-15"^^xsd:date ;
+    dcterms:created "2025-01-15"^^xsd:date ;
+    dcterms:modified "2025-01-15"^^xsd:date ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/legalcode> ;
-    dcterms:issued "2025-04-15"^^xsd:date ;
-    dcterms:publisher [
-        a foaf:Organization ;
-        foaf:name "NSoluTI - Nucleo de Soluções em Tecnologia da Informação" ;
-        foaf:homepage <https://nsoluti.ifnmg.edu.br>
-    ] ;
+    dcterms:issued "2025-01-15"^^xsd:date ;
+    dcterms:publisher <https://nsoluti.ifnmg.edu.br> ;
     
     # Add DOI
     bibo:doi "10.5281/zenodo.XXXXXX" ;  # Replace XXXXXX with your actual DOI number
@@ -41,9 +37,8 @@
     foaf:logo <https://raw.githubusercontent.com/nsoluti/oqs/main/logo.png> ;  # Update with actual logo URL
     
     opm:hasOntologyStatus <http://purl.org/net/registry/ontology/term/Stable> ; 
+    
     mod:status "Stable" ;
-    dc:status "Stable"@en ;
-    dcterms:status "Stable"@en ; 
     bibo:status bibo:published ;
 
     dcterms:source <https://github.com/nsoluti/oqs> ;
@@ -54,6 +49,7 @@
     vann:preferredNamespacePrefix "oqs"@en ;
     vann:preferredNamespaceUri "https://purl.org/nsoluti/oqs#"^^xsd:anyURI ;
     rdfs:comment """  Cite this work as:     This work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.  For the source repository, see: <https://github.com/nsoluti/oqs>"""@en .
+
 :Instrument rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Instrument"@en.
@@ -747,6 +743,7 @@
 
 
 
+
 :Author rdfs:comment "."@en ; rdfs:comment "."@pt-br .
 :Authorship rdfs:comment "."@en ; rdfs:comment "."@pt-br .
 :ClosedQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
@@ -838,6 +835,7 @@
 :hasLocation rdfs:comment "."@en ; rdfs:comment "."@pt-br .
 :hasMarkdowntext rdfs:comment "."@en ; rdfs:comment "."@pt-br .
 :hasMaximumValue rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasMediaRepresentation rdfs:comment "."@en ; rdfs:comment "."@pt-br .
 :hasMethodology rdfs:comment "."@en ; rdfs:comment "."@pt-br .
 :hasMinimumValue rdfs:comment "."@en ; rdfs:comment "."@pt-br .
 :hasName rdfs:comment "."@en ; rdfs:comment "."@pt-br .
