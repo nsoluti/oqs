@@ -14,6 +14,8 @@
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix opm: <http://openprovenance.org/model/opmo#> .
 @prefix mod: <http://www.isibang.ac.in/ns/mod#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+
 @base <http://purl.org/nsoluti/oqs#> .
 
 <http://purl.org/nsoluti/oqs#> rdf:type owl:Ontology ;
@@ -36,10 +38,7 @@
     # Add logo
     foaf:logo <https://raw.githubusercontent.com/nsoluti/oqs/main/logo.png> ;  # Update with actual logo URL
     
-    opm:hasOntologyStatus <http://purl.org/net/registry/ontology/term/Stable> ; 
-    
-    mod:status "Stable" ;
-    bibo:status bibo:published ;
+    adms:status "Stable"@en ;
 
     dcterms:source <https://github.com/nsoluti/oqs> ;
     
