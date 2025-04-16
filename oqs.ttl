@@ -1,6 +1,6 @@
 @prefix : <http://purl.org/nsoluti/oqs#>.
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -23,16 +23,15 @@
                "Bax, Marcello Peixoto" ,
                "Pinheiro, Paulo" ;
     dc:title "OQS: Ontology for Questionnaires Sharing"@en ;
-    dct:bibliographicCitation "Marques, Yuri Bento, Marcello Peixoto Bax, and Paulo Pinheiro. \"OQS: Ontology for Questionnaires Sharing.\", 2025, http://purl.org/nsoluti/doc/oqs ."@en ;
-    dct:created "2019-11-11"^^xsd:date ;
-    dct:modified "2021-11-01"^^xsd:date ;
-    dct:license <http://creativecommons.org/licenses/by/4.0/legalcode> ;
-    dcterms:publisher <https://nsoluti.ifnmg.edu.br> ;
-    dct:issued "2021-11-01"^^xsd:date ;
-    dct:publisher [
+    dcterms:bibliographicCitation "Marques, Yuri Bento, Marcello Peixoto Bax, and Paulo Pinheiro. \"OQS: Ontology for Questionnaires Sharing.\", 2025, http://purl.org/nsoluti/doc/oqs ."@en ;
+    dcterms:created "2025-04-15"^^xsd:date ;
+    dcterms:modified "2025-04-15"^^xsd:date ;
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/legalcode> ;
+    dcterms:issued "2025-04-15"^^xsd:date ;
+    dcterms:publisher [
         a foaf:Organization ;
-        foaf:name "NSoluti Research Group" ;
-        foaf:homepage <https://github.com/nsoluti>
+        foaf:name "NSoluTI - Nucleo de Soluções em Tecnologia da Informação" ;
+        foaf:homepage <https://nsoluti.ifnmg.edu.br>
     ] ;
     
     # Add DOI
@@ -44,10 +43,10 @@
     opm:hasOntologyStatus <http://purl.org/net/registry/ontology/term/Stable> ; 
     mod:status "Stable" ;
     dc:status "Stable"@en ;
-    dct:status "Stable"@en ; 
+    dcterms:status "Stable"@en ; 
     bibo:status bibo:published ;
 
-    dct:source <https://github.com/nsoluti/oqs> ;
+    dcterms:source <https://github.com/nsoluti/oqs> ;
     
     owl:priorVersion <http://purl.org/nsoluti/oqs#/0.9.0> ;  # If there was a prior 
     owl:backwardCompatibleWith <http://purl.org/nsoluti/oqs#/0.9.0> ;  # If 
@@ -55,7 +54,6 @@
     vann:preferredNamespacePrefix "oqs"@en ;
     vann:preferredNamespaceUri "https://purl.org/nsoluti/oqs#"^^xsd:anyURI ;
     rdfs:comment """  Cite this work as:     This work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.  For the source repository, see: <https://github.com/nsoluti/oqs>"""@en .
-
 :Instrument rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Instrument"@en.
@@ -325,6 +323,11 @@
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasAcronym"@en.
+:hasMediaRepresentation rdfs:domain :Questionnaire;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "hasMediaRepresentation"@en.
 :hasBeginPointInXSDDdate rdfs:domain :Questionnaire;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
@@ -741,3 +744,131 @@
     rdfs:domain :QuestionBranching;
     rdfs:range :Question;
     rdfs:label "toQuestion"@en.
+
+
+
+:Author rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:Authorship rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:ClosedQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:Detector rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:Instrument rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:LevelsOfMeasurement rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:LevelsOfMeasurementType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:LicenceType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:OpenQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:OriginType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:Person rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:Question rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:QuestionBranching rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:QuestionOrigin rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:Questionnaire rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:QuestionnaireLicence rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:QuestionnaireStatus rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:QuestionnaireStatusType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:QuestionnaireValidation rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:QuestionnaireValidationType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:ResponseOption rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:ResponseOptions rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:Scale rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:ScaleType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:Section rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:Variable rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:authorshipMediatesAuthor rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:authorshipMediatesQuestionnaire rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:characterizationQuestionnaireLicence rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:characterizationVariableLevelsofMeasurement rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:characterizationVariableScale rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:fromQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasDerivedFromQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasDerivedFromQuestionnaire rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasLevelsOfMeasurementType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasLicenceType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasOriginType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasQuestionnaireStatusType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasQuestionnaireValidationType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasScaleType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:participatedInValidationOfQuestionnaire rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:questionIsComponentOfSection rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:questionOriginInheresInQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:questionnaireStatusInheresInQuestionnaire rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:responseOptionIsCollectionMemberOfResponseOptions rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:responseOptionsIsComponentOfClosedQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:sectionIsCollectionMemberOfQuestionnaire rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:toQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:variableIsComponentOfQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasAcronym rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasAcronym_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasAcronym_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasBeginPointInXSDDdate rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasBeginPointInXSDDdate_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasBeginPointInXSDDdate_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasBeginPointInXSDDdate_3 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasBeginPointInXSDDdate_4 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasBibliograficReference rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasBibliograficReference_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasCondition rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasContext rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasDataElementDescription rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasDataElementDescription_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasDataElementDescription_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasDescription rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasDescription_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasDescription_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasDescription_3 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasEmail rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasEndPointInXSDDdate rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasExpectedFormat rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasFiliation rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasHypertext rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasHypertext_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasHypertext_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasIdentifier rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasIdentifier_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasIdentifier_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasIdentifier_3 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasIdentifier_4 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasIdentifier_5 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasIdentifier_6 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasInitialStatement rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasInstructions rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasLanguage rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasLattes rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasLicenceDescription rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasLicenceName rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasLocation rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasMarkdowntext rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasMaximumValue rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasMethodology rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasMinimumValue rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasName rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasName_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasName_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasName_3 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasOrcid rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasOrder rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasOwner rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasPopulation rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasPrimming rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasSampling rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasScoringInstructions rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasText rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasText_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasText_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasTitle rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUnit rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUri rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUri_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUri_10 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUri_11 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUri_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUri_3 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUri_4 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUri_5 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUri_6 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUri_7 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUri_8 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasUri_9 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasValue rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasVersion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:hasWebsite rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:isSkippable rdfs:comment "."@en ; rdfs:comment "."@pt-br .
