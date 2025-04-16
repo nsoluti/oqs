@@ -1,23 +1,3 @@
-@prefix : <http://purl.org/nsoluti/oqs#>.
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix gufo: <http://purl.org/nemo/gufo#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix opm: <http://openprovenance.org/model/opmo#> .
-@prefix mod: <http://www.isibang.ac.in/ns/mod#> .
-@prefix adms: <http://www.w3.org/ns/adms#> .
-
-@base <http://purl.org/nsoluti/oqs#> .
-
 <http://purl.org/nsoluti/oqs#> rdf:type owl:Ontology ;
     owl:versionIRI <http://purl.org/nsoluti/oqs/1.0.0> ;
     owl:versionInfo "1.0.0"@en ;
@@ -31,23 +11,16 @@
     dcterms:license <http://creativecommons.org/licenses/by/4.0/legalcode> ;
     dcterms:issued "2025-01-15"^^xsd:date ;
     dcterms:publisher <https://nsoluti.ifnmg.edu.br> ;
-    
-    # Add DOI
-    bibo:doi "10.5281/zenodo.XXXXXX" ;  # Replace XXXXXX with your actual DOI number
-    
-    # Add logo
-    foaf:logo <https://raw.githubusercontent.com/nsoluti/oqs/main/logo.png> ;  # Update with actual logo URL
-    
+    bibo:doi "10.5281/zenodo.XXXXXX" ;
+    foaf:logo <https://raw.githubusercontent.com/nsoluti/oqs/main/logo.png> ;
     dcterms:source <https://github.com/nsoluti/oqs> ;
-    
-    owl:priorVersion <http://purl.org/nsoluti/oqs#/0.9.0> ;  # If there was a prior 
-    owl:backwardCompatibleWith <http://purl.org/nsoluti/oqs#/0.9.0> ;  # If 
-    
+    adms:status "Stable"@en ;
+    owl:priorVersion <http://purl.org/nsoluti/oqs#/0.9.0> ;
+    owl:backwardCompatibleWith <http://purl.org/nsoluti/oqs#/0.9.0> ;
     vann:preferredNamespacePrefix "oqs"@en ;
     vann:preferredNamespaceUri "https://purl.org/nsoluti/oqs#"^^xsd:anyURI ;
     rdfs:comment """  Cite this work as:     This work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.  For the source repository, see: <https://github.com/nsoluti/oqs>"""@en .
 
-    <http://purl.org/nsoluti/oqs#> adms:status "Stable"@en .
 
 :Instrument rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
