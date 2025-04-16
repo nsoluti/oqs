@@ -15,6 +15,7 @@
 @prefix opm: <http://openprovenance.org/model/opmo#> .
 @prefix mod: <http://www.isibang.ac.in/ns/mod#> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix omv: <https://w3id.org/mod#> .
 @base <http://purl.org/nsoluti/oqs#> .
 
 <http://purl.org/nsoluti/oqs#> rdf:type owl:Ontology ;
@@ -33,7 +34,7 @@
     bibo:doi "10.5281/zenodo.XXXXXX" ;
     foaf:logo <https://raw.githubusercontent.com/nsoluti/oqs/main/logo.png> ;
     dcterms:source <https://github.com/nsoluti/oqs> ;
-    adms:status "Stable"@en ;
+    omv:status "Stable"@en ;
     owl:priorVersion <http://purl.org/nsoluti/oqs#/0.9.0> ;
     owl:backwardCompatibleWith <http://purl.org/nsoluti/oqs#/0.9.0> ;
     vann:preferredNamespacePrefix "oqs"@en ;
