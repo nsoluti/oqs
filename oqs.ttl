@@ -10,7 +10,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix opm: <http://openprovenance.org/model/opmo#> .
 @prefix mod: <http://www.isibang.ac.in/ns/mod#> .
@@ -32,7 +31,7 @@
     dcterms:issued "2025-01-15"^^xsd:date ;
     dcterms:publisher <https://nsoluti.ifnmg.edu.br> ;
     bibo:doi "10.5281/zenodo.XXXXXX" ;
-    foaf:logo <https://raw.githubusercontent.com/nsoluti/oqs/main/logo.png> ;
+    foaf:logo <https://nsoluti.github.io/oqs/logo.png> ;
     dcterms:source <https://github.com/nsoluti/oqs> ;
     omv:status "Stable"@en ;
     owl:priorVersion <http://purl.org/nsoluti/oqs#/0.9.0> ;
