@@ -226,25 +226,25 @@
 :Translation rdf:type :OriginType;
     rdf:label "[object Object]".
 :OriginType rdfs:label "OriginType"@en.
-:QuestionBranching rdf:type owl:Class, gufo:SituationType, owl:NamedIndividual;
+:Ramification rdf:type owl:Class, gufo:SituationType, owl:NamedIndividual;
     rdfs:subClassOf gufo:Situation;
-    rdfs:label "QuestionBranching"@en.
+    rdfs:label "Ramification"@en.
 :Questionnaire rdfs:subClassOf :Instrument.
 :Author rdfs:subClassOf :Person.
 :Question rdfs:subClassOf :Detector.
 :OpenQuestion rdfs:subClassOf :Question.
 :ClosedQuestion rdfs:subClassOf :Question.
-:hasName rdfs:domain :Person;
+:hasName rdfs:domain :Person, :Questionnaire, :Question, :Variable, :Section;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasName"@en.
-:hasUri rdfs:domain :Person;
+:hasUri rdfs:domain :Person, :Questionnaire, :QuestionnaireValidation, :QuestionnaireStatus, :QuestionnaireLicence, :Section, :Question, :Variable, :ResponseOption, :ResponseOptions, :LevelsOfMeasurement, :Scale; 
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasUri"@en.
-:hasIdentifier rdfs:domain :Person;
+:hasIdentifier rdfs:domain :Person, :Questionnaire, :QuestionnaireValidation, :QuestionnaireStatus, :QuestionnaireLicence, :Section, :Question, :Variable, :ResponseOption, :ResponseOption; 
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
@@ -274,12 +274,7 @@
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasVersion"@en.
-:hasName_1 rdfs:domain :Questionnaire;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasName"@en.
-:hasDescription rdfs:domain :Questionnaire;
+:hasDescription rdfs:domain :Questionnaire, :QuestionnaireValidation;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
@@ -289,22 +284,12 @@
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasScoringInstructions"@en.
-:hasBibliograficReference rdfs:domain :Questionnaire;
+:hasBibliograficReference rdfs:domain :Questionnaire, :QuestionnaireValidation;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasBibliograficReference"@en.
-:hasIdentifier_1 rdfs:domain :Questionnaire;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasIdentifier"@en.
-:hasUri_1 rdfs:domain :Questionnaire;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasUri"@en.
-:hasAcronym rdfs:domain :Questionnaire;
+:hasAcronym rdfs:domain :Questionnaire, :Section, :Question;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
@@ -314,26 +299,6 @@
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasMediaRepresentation"@en.
-:hasBeginPointInXSDDdate rdfs:domain :Questionnaire;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasBeginPointInXSDDdate"@en.
-:hasEndPointInXSDDdate rdfs:domain :Questionnaire;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasEndPointInXSDDdate"@en.
-:hasDescription_1 rdfs:domain :QuestionnaireValidation;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasDescription"@en.
-:hasIdentifier_2 rdfs:domain :QuestionnaireValidation;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasIdentifier"@en.
 :hasPopulation rdfs:domain :QuestionnaireValidation;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
@@ -364,26 +329,11 @@
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasLocation"@en.
-:hasUri_2 rdfs:domain :QuestionnaireValidation;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasUri"@en.
-:hasBibliograficReference_1 rdfs:domain :QuestionnaireValidation;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasBibliograficReference"@en.
 :hasQuestionnaireValidationType rdfs:domain :QuestionnaireValidation;
     rdfs:range :QuestionnaireValidationType;
     rdf:type owl:ObjectProperty;
     rdfs:subPropertyOf gufo:hasReifiedQualityValue;
     rdfs:label "hasQuestionnaireValidationType"@en.
-:hasUri_3 rdfs:domain :QuestionnaireStatus;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasUri"@en.
 :hasQuestionnaireStatusType rdfs:domain :QuestionnaireStatus;
     rdfs:range :QuestionnaireStatusType;
     rdf:type owl:ObjectProperty;
@@ -409,11 +359,6 @@
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasWebsite"@en.
-:hasUri_4 rdfs:domain :QuestionnaireLicence;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasUri"@en.
 :hasLicenceType rdfs:domain :QuestionnaireLicence;
     rdfs:range :LicenceType;
     rdf:type owl:ObjectProperty;
@@ -434,37 +379,17 @@
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasPrimming"@en.
-:hasIdentifier_3 rdfs:domain :Section;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasIdentifier"@en.
-:hasUri_5 rdfs:domain :Section;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasUri"@en.
-:hasAcronym_1 rdfs:domain :Section;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasAcronym"@en.
-:hasBeginPointInXSDDdate_1 rdfs:domain :Section;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasBeginPointInXSDDdate"@en.
 :hasInitialStatement rdfs:domain :Question;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasInitialStatement"@en.
-:hasText rdfs:domain :Question;
+:hasText rdfs:domain :Question, :Variable, :ResponseOption;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasText"@en.
-:hasHypertext rdfs:domain :Question;
+:hasHypertext rdfs:domain :Question, :Variable, :ResponseOption;
     rdfs:range xsd:boolean;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
@@ -474,27 +399,12 @@
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasMarkdowntext"@en.
-:hasName_2 rdfs:domain :Question;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasName"@en.
-:hasUri_6 rdfs:domain :Question;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasUri"@en.
-:hasIdentifier_4 rdfs:domain :Question;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasIdentifier"@en.
 :isSkippable rdfs:domain :Question;
     rdfs:range xsd:boolean;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "isSkippable"@en.
-:hasDataElementDescription rdfs:domain :Question;
+:hasDataElementDescription rdfs:domain :Question, :Variable, :ResponseOption;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
@@ -504,51 +414,11 @@
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasOrder"@en.
-:hasAcronym_2 rdfs:domain :Question;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasAcronym"@en.
 :hasOriginType rdfs:domain :QuestionOrigin;
     rdfs:range :OriginType;
     rdf:type owl:ObjectProperty;
     rdfs:subPropertyOf gufo:hasReifiedQualityValue;
     rdfs:label "hasOriginType"@en.
-:hasText_1 rdfs:domain :Variable;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasText"@en.
-:hasHypertext_1 rdfs:domain :Variable;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasHypertext"@en.
-:hasName_3 rdfs:domain :Variable;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasName"@en.
-:hasUri_7 rdfs:domain :Variable;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasUri"@en.
-:hasIdentifier_5 rdfs:domain :Variable;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasIdentifier"@en.
-:hasBeginPointInXSDDdate_2 rdfs:domain :Variable;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasBeginPointInXSDDdate"@en.
-:hasDataElementDescription_1 rdfs:domain :Variable;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasDataElementDescription"@en.
 :hasExpectedFormat rdfs:domain :Variable;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
@@ -569,82 +439,22 @@
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasUnit"@en.
-:hasUri_8 rdfs:domain :LevelsOfMeasurement;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasUri"@en.
-:hasDescription_2 rdfs:domain :LevelsOfMeasurement;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasDescription"@en.
 :hasLevelsOfMeasurementType rdfs:domain :LevelsOfMeasurement;
     rdfs:range :LevelsOfMeasurementType;
     rdf:type owl:ObjectProperty;
     rdfs:subPropertyOf gufo:hasReifiedQualityValue;
     rdfs:label "hasLevelsOfMeasurementType"@en.
-:hasUri_9 rdfs:domain :Scale;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasUri"@en.
-:hasDescription_3 rdfs:domain :Scale;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasDescription"@en.
 :hasScaleType rdfs:domain :Scale;
     rdfs:range :ScaleType;
     rdf:type owl:ObjectProperty;
     rdfs:subPropertyOf gufo:hasReifiedQualityValue;
     rdfs:label "hasScaleType"@en.
-:hasUri_10 rdfs:domain :ResponseOptions;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasUri"@en.
-:hasIdentifier_6 rdfs:domain :ResponseOptions;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasIdentifier"@en.
-:hasBeginPointInXSDDdate_3 rdfs:domain :ResponseOptions;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasBeginPointInXSDDdate"@en.
-:hasText_2 rdfs:domain :ResponseOption;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasText"@en.
-:hasHypertext_2 rdfs:domain :ResponseOption;
-    rdfs:range xsd:boolean;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasHypertext"@en.
-:hasUri_11 rdfs:domain :ResponseOption;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasUri"@en.
-:hasBeginPointInXSDDdate_4 rdfs:domain :ResponseOption;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasBeginPointInXSDDdate"@en.
 :hasValue rdfs:domain :ResponseOption;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "hasValue"@en.
-:hasDataElementDescription_2 rdfs:domain :ResponseOption;
-    rdfs:range xsd:string;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "hasDataElementDescription"@en.
-:hasCondition rdfs:domain :QuestionBranching;
+:hasCondition rdfs:domain :Ramification;
     rdfs:range xsd:string;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
@@ -723,140 +533,281 @@
     rdfs:range :Questionnaire;
     rdfs:label "hasDerivedFromQuestionnaire"@en.
 :fromQuestion rdf:type owl:ObjectProperty;
-    rdfs:domain :QuestionBranching;
+    rdfs:domain :Ramification;
     rdfs:range :Question;
     rdfs:label "fromQuestion"@en.
 :toQuestion rdf:type owl:ObjectProperty;
-    rdfs:domain :QuestionBranching;
+    rdfs:domain :Ramification;
     rdfs:range :Question;
     rdfs:label "toQuestion"@en.
 
 
+:Author rdfs:comment "Person responsible for the intellectual creation or original conception of the structural elements of a research instrument."@en,
+        "Pessoa responsável pela criação intelectual ou concepção original dos elementos estruturantes de um instrumento de pesquisa."@pt-br .
+
+:Authorship rdfs:comment "Relational construct that mediates the link between a person and the authorship of a questionnaire, enabling attribution and provenance tracking."@en,
+        "Construto relacional que media a ligação entre uma pessoa e a autoria de um questionário, permitindo a atribuição e o rastreamento da proveniência."@pt-br .
+
+:ClosedQuestion rdfs:comment "Question that presents predefined response options, limiting the answer space to a structured set."@en,
+        "Questão que apresenta opções de resposta predefinidas, restringindo o espaço de resposta a um conjunto estruturado."@pt-br .
+
+:Detector rdfs:comment "Category representing instruments used to sense or detect data values in empirical environments."@en,
+        "Categoria que representa instrumentos usados para detectar ou captar valores de dados em ambientes empíricos."@pt-br .
+
+:Instrument rdfs:comment "Artifact used for the structured and systematic acquisition of information, including physical, elicitation, or computational tools."@en,
+        "Artefato utilizado para a aquisição estruturada e sistemática de informações, incluindo instrumentos físicos, de elicitação ou computacionais."@pt-br .
+
+:LevelsOfMeasurement rdfs:comment "Characterization of the nature and properties of variables in terms of measurement theory (nominal, ordinal, interval, ratio)."@en,
+        "Caracterização da natureza e propriedades das variáveis com base na teoria da mensuração (nominal, ordinal, intervalar, razão)."@pt-br .
+
+:LevelsOfMeasurementType rdfs:comment "Enumeration of measurement levels indicating variable characteristics and statistical properties."@en,
+        "Enumeração dos níveis de medida que indicam características e propriedades estatísticas das variáveis."@pt-br .
+
+:LicenceType rdfs:comment "Enumeration of licence modalities defining reuse permissions and restrictions of questionnaires."@en,
+        "Enumeração das modalidades de licença que definem permissões e restrições de reutilização de questionários."@pt-br .
+
+:OpenQuestion rdfs:comment "Question type that allows respondents to provide free-form, unrestricted textual answers."@en,
+        "Tipo de questão que permite ao respondente fornecer respostas textuais livres e não restritas."@pt-br .
+
+:OriginType rdfs:comment "Classification of how a question or questionnaire was derived, such as through translation, adaptation, or literal copying."@en,
+        "Classificação de como uma questão ou questionário foi derivado, como por meio de tradução, adaptação ou cópia literal."@pt-br .
+
+:Person rdfs:comment "Individual who may assume roles such as author or validator in the context of questionnaire design and use."@en,
+        "Indivíduo que pode assumir papéis como autor ou validador no contexto da concepção e uso de questionários."@pt-br .
+
+:Question rdfs:comment "Discrete item designed to elicit specific information from respondents within a questionnaire."@en,
+        "Item discreto formulado para coletar informações específicas dos respondentes dentro de um questionário."@pt-br .
+
+:Questionnaire rdfs:comment "Structured data collection instrument composed of questions and sections, used to gather information from respondents."@en,
+        "Instrumento estruturado de coleta de dados, composto por perguntas e seções, utilizado para reunir informações dos respondentes."@pt-br .
+
+:QuestionnaireLicence rdfs:comment "Mode that characterizes the licensing condition under which the questionnaire can be reused."@en,
+        "Modo que caracteriza a condição de licenciamento sob a qual o questionário pode ser reutilizado."@pt-br .
+
+:QuestionnaireStatus rdfs:comment "State representation of the questionnaire lifecycle, such as draft, published, or withdrawn."@en,
+        "Representação do estado do ciclo de vida do questionário, como rascunho, publicado ou retirado."@pt-br .
+
+:QuestionnaireStatusType rdfs:comment "Enumeration of possible lifecycle statuses of a questionnaire."@en,
+        "Enumeração dos possíveis estados do ciclo de vida de um questionário."@pt-br .
+
+:QuestionnaireValidation rdfs:comment "Process undertaken to assess whether a questionnaire measures what it is intended to measure."@en,
+        "Processo realizado para avaliar se um questionário mede efetivamente o que se propõe a mensurar."@pt-br .
+
+:QuestionnaireValidationType rdfs:comment "Enumeration of methodological strategies used to validate a questionnaire, such as content, construct, or criterion validity."@en,
+        "Enumeração de estratégias metodológicas utilizadas para validar um questionário, como validade de conteúdo, de construto ou de critério."@pt-br .
+
+:ResponseOption rdfs:comment "Predefined alternative provided in closed questions for the elicitation of specific information."@en,
+        "Alternativa predefinida oferecida em questões fechadas para a elicitação de informações específicas."@pt-br .
+
+:ResponseOptions rdfs:comment "Collective structure grouping all predefined alternatives for a closed question."@en,
+        "Estrutura coletiva que agrupa todas as alternativas predefinidas de uma questão fechada."@pt-br .
+
+:Scale rdfs:comment "Systematic technique used to operationalize and standardize the collection of structured responses."@en,
+        "Técnica sistemática utilizada para operacionalizar e padronizar a coleta de respostas estruturadas."@pt-br .
+
+:ScaleType rdfs:comment "Enumeration of scale categories, such as Likert, Multiple Choice, and Guttman, that define the structure of response collection."@en,
+        "Enumeração das categorias de escala, como Likert, Múltipla Escolha e Guttman, que definem a estrutura da coleta de respostas."@pt-br .
+
+:Section rdfs:comment "Subset of questions within a questionnaire, organized according to thematic or conceptual criteria."@en,
+        "Subconjunto de perguntas dentro de um questionário, organizado segundo critérios temáticos ou conceituais."@pt-br .
+
+:Validation rdfs:comment "Methodological procedure used to ensure the adequacy and reliability of a data collection instrument."@en,
+        "Procedimento metodológico utilizado para garantir a adequação e confiabilidade de um instrumento de coleta de dados."@pt-br .
+
+:Variable rdfs:comment "Measurable attribute represented by a question, capable of assuming different values based on respondent choices."@en,
+        "Atributo mensurável representado por uma questão, capaz de assumir diferentes valores conforme as escolhas dos respondentes."@pt-br .
 
 
-:Author rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:Authorship rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:ClosedQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:Detector rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:Instrument rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:LevelsOfMeasurement rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:LevelsOfMeasurementType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:LicenceType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:OpenQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:OriginType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:Person rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:Question rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:QuestionBranching rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:QuestionOrigin rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:Questionnaire rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:QuestionnaireLicence rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:QuestionnaireStatus rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:QuestionnaireStatusType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:QuestionnaireValidation rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:QuestionnaireValidationType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:ResponseOption rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:ResponseOptions rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:Scale rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:ScaleType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:Section rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:Variable rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:authorshipMediatesAuthor rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:authorshipMediatesQuestionnaire rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:characterizationQuestionnaireLicence rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:characterizationVariableLevelsofMeasurement rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:characterizationVariableScale rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:fromQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasDerivedFromQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasDerivedFromQuestionnaire rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasLevelsOfMeasurementType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasLicenceType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasOriginType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasQuestionnaireStatusType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasQuestionnaireValidationType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasScaleType rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:participatedInValidationOfQuestionnaire rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:questionIsComponentOfSection rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:questionOriginInheresInQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:questionnaireStatusInheresInQuestionnaire rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:responseOptionIsCollectionMemberOfResponseOptions rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:responseOptionsIsComponentOfClosedQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:sectionIsCollectionMemberOfQuestionnaire rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:toQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:variableIsComponentOfQuestion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasAcronym rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasAcronym_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasAcronym_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasBeginPointInXSDDdate rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasBeginPointInXSDDdate_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasBeginPointInXSDDdate_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasBeginPointInXSDDdate_3 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasBeginPointInXSDDdate_4 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasBibliograficReference rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasBibliograficReference_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasCondition rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasContext rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasDataElementDescription rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasDataElementDescription_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasDataElementDescription_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasDescription rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasDescription_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasDescription_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasDescription_3 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasEmail rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasEndPointInXSDDdate rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasExpectedFormat rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasFiliation rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasHypertext rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasHypertext_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasHypertext_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasIdentifier rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasIdentifier_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasIdentifier_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasIdentifier_3 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasIdentifier_4 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasIdentifier_5 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasIdentifier_6 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasInitialStatement rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasInstructions rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasLanguage rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasLattes rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasLicenceDescription rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasLicenceName rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasLocation rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasMarkdowntext rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasMaximumValue rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasMediaRepresentation rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasMethodology rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasMinimumValue rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasName rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasName_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasName_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasName_3 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasOrcid rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasOrder rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasOwner rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasPopulation rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasPrimming rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasSampling rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasScoringInstructions rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasText rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasText_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasText_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasTitle rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUnit rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUri rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUri_1 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUri_10 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUri_11 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUri_2 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUri_3 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUri_4 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUri_5 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUri_6 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUri_7 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUri_8 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasUri_9 rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasValue rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasVersion rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:hasWebsite rdfs:comment "."@en ; rdfs:comment "."@pt-br .
-:isSkippable rdfs:comment "."@en ; rdfs:comment "."@pt-br .
+:QuestionOrigin rdfs:comment "Mode that characterizes the provenance of a question, specifying whether it was newly created or derived from another instrument through processes such as translation, adaptation, or direct copying."@en , "Modo que caracteriza a proveniência de uma questão, especificando se ela foi criada originalmente ou derivada de outro instrumento por meio de processos como tradução, adaptação ou cópia direta."@pt-br .
+
+:Ramification rdfs:comment "Situation representing the logical flow between questions in a questionnaire, where the response to one question determines the navigation path to another question."@en, "Situação que representa o fluxo lógico entre questões de um questionário, em que a resposta a uma questão determina o direcionamento do respondente para outra questão."@pt-br .
+
+:authorshipMediatesAuthor rdfs:comment "Relates an authorship relation to the person who acts as author."@en,
+                          "Relaciona uma relação de autoria à pessoa que atua como autor."@pt-br .
+
+:authorshipMediatesQuestionnaire rdfs:comment "Relates an authorship relation to the questionnaire it concerns."@en,
+                                 "Relaciona uma relação de autoria ao questionário a que se refere."@pt-br .
+
+:characterizationQuestionnaireLicence rdfs:comment "Links a questionnaire to its associated licence, specifying the reuse rights."@en,
+                                      "Relaciona um questionário à sua licença associada, especificando os direitos de reutilização."@pt-br .
+
+:characterizationVariableLevelsofMeasurement rdfs:comment "Associates a variable with its level of measurement type, such as nominal or ordinal."@en,
+                                             "Associa uma variável ao seu nível de medida, como nominal ou ordinal."@pt-br .
+
+:characterizationVariableScale rdfs:comment "Links a variable to the scale used for response standardization."@en,
+                                        "Relaciona uma variável à escala utilizada para padronização das respostas."@pt-br .
+
+:fromQuestion rdfs:comment "Indicates the question from which a branching condition originates."@en,
+                           "Indica a questão a partir da qual se origina uma condição de ramificação."@pt-br .
+
+:hasDerivedFromQuestion rdfs:comment "Connects a question to the original question from which it was derived."@en,
+                                     "Conecta uma questão à questão original da qual foi derivada."@pt-br .
+
+:hasDerivedFromQuestionnaire rdfs:comment "Connects a questionnaire to the original questionnaire from which it was derived."@en,
+                                          "Conecta um questionário ao questionário original do qual foi derivado."@pt-br .
+
+:hasLevelsOfMeasurementType rdfs:comment "Specifies the level of measurement assigned to a variable."@en,
+                                         "Especifica o nível de medida atribuído a uma variável."@pt-br .
+
+:hasLicenceType rdfs:comment "Defines the type of licence that applies to a questionnaire."@en,
+                             "Define o tipo de licença que se aplica a um questionário."@pt-br .
+
+:hasOriginType rdfs:comment "Specifies the origin classification of a question, such as translated or adapted."@en,
+                            "Especifica a classificação de origem de uma questão, como traduzida ou adaptada."@pt-br .
+
+:hasQuestionnaireStatusType rdfs:comment "Indicates the current lifecycle status of a questionnaire."@en,
+                                       "Indica o estado atual do ciclo de vida de um questionário."@pt-br .
+
+:hasQuestionnaireValidationType rdfs:comment "Specifies the type of validation method applied to a questionnaire."@en,
+                                             "Especifica o tipo de método de validação aplicado a um questionário."@pt-br .
+
+:hasScaleType rdfs:comment "Denotes the category of the response scale used in a question."@en,
+                           "Denota a categoria da escala de resposta utilizada em uma questão."@pt-br .
+
+:participatedInValidationOfQuestionnaire rdfs:comment "Relates a validation event to the questionnaire it evaluated."@en,
+                                           "Relaciona um evento de validação ao questionário que foi avaliado."@pt-br .
+
+:questionIsComponentOfSection rdfs:comment "Establishes that a question belongs to a specific section within a questionnaire."@en,
+                                          "Estabelece que uma questão pertence a uma seção específica dentro de um questionário."@pt-br .
+
+:questionOriginInheresInQuestion rdfs:comment "States that a given origin applies to a specific question."@en,
+                                     "Indica que uma determinada origem aplica-se a uma questão específica."@pt-br .
+
+:questionnaireStatusInheresInQuestionnaire rdfs:comment "Indicates that a specific status inheres in a questionnaire."@en,
+                                           "Indica que um determinado status inere em um questionário."@pt-br .
+
+:responseOptionIsCollectionMemberOfResponseOptions rdfs:comment "Declares that a response option is a member of a collective set of predefined responses."@en,
+                                                   "Declara que uma opção de resposta é membro de um conjunto coletivo de respostas predefinidas."@pt-br .
+
+:responseOptionsIsComponentOfClosedQuestion rdfs:comment "States that a set of response options is a component of a closed question."@en,
+                                            "Indica que um conjunto de opções de resposta é componente de uma questão fechada."@pt-br .
+
+:sectionIsCollectionMemberOfQuestionnaire rdfs:comment "Relates a section as a component of a questionnaire."@en,
+                                          "Relaciona uma seção como componente de um questionário."@pt-br .
+
+:toQuestion rdfs:comment "Indicates the question that follows in the branching logic of a questionnaire."@en,
+                         "Indica a questão que se segue na lógica de ramificação de um questionário."@pt-br .
+
+:variableIsComponentOfQuestion rdfs:comment "Associates a variable with the question it operationalizes."@en,
+                                      "Associa uma variável à questão que a operacionaliza."@pt-br .
+
+:hasAcronym rdfs:comment "Indicates the acronym of a questionnaire or its components."@en,
+                         "Indica a sigla de um questionário ou de seus componentes."@pt-br .
+
+
+:hasBibliograficReference rdfs:comment "Specifies the bibliographic reference supporting the questionnaire or its components."@en,
+                           "Especifica a referência bibliográfica que fundamenta o questionário ou seus componentes."@pt-br .
+
+:hasCondition rdfs:comment "Indicates a logical condition that must be satisfied for an action or question to be activated."@en,
+                          "Indica uma condição lógica que deve ser satisfeita para que uma ação ou questão seja ativada."@pt-br .
+
+:hasContext rdfs:comment "Defines the contextual domain in which a questionnaire or question is applicable."@en,
+                         "Define o domínio contextual em que um questionário ou questão é aplicável."@pt-br .
+
+:hasDataElementDescription rdfs:comment "Specifies what a question in a form is about, describing the conceptual data element it represents."@en,
+                                 "Especifica sobre o que trata uma questão em um formulário, descrevendo o elemento conceitual de dado que ela representa."@pt-br .
+
+:hasDescription rdfs:comment "Provides a textual description of the entity's content or purpose."@en,
+                            "Fornece uma descrição textual sobre o conteúdo ou propósito da entidade."@pt-br .
+
+:hasEmail rdfs:comment "Indicates the email address associated with a person or responsible entity."@en,
+                       "Indica o endereço de e-mail associado a uma pessoa ou entidade responsável."@pt-br .
+
+:hasEndPointInXSDDdate rdfs:comment "Represents the end date of a period associated with the entity."@en,
+                                 "Representa a data de término de um período associado à entidade."@pt-br .
+
+:hasExpectedFormat rdfs:comment "Indicates the expected data format for the response to a question."@en,
+                              "Indica o formato de dado esperado para a resposta a uma questão."@pt-br .
+
+:hasFiliation rdfs:comment "Links a person to their institutional affiliation."@en,
+                          "Relaciona uma pessoa à sua afiliação institucional."@pt-br .
+
+:hasHypertext rdfs:comment "Associates a hypertext link or content for reference or navigation."@en,
+                          "Associa um link ou conteúdo em hipertexto para referência ou navegação."@pt-br .
+
+:hasIdentifier rdfs:comment "Provides a unique identifier for the entity."@en,
+                            "Fornece um identificador único para a entidade."@pt-br .
+
+:hasInitialStatement rdfs:comment "Specifies an introductory text presented before a question to provide context or instruction."@en,
+                                  "Especifica um texto introdutório apresentado antes de uma questão para fornecer contexto ou instruções."@pt-br .
+
+:hasInstructions rdfs:comment "Defines instructions for answering a question or completing a questionnaire."@en,
+                             "Define instruções para responder a uma questão ou completar um questionário."@pt-br .
+
+:hasLanguage rdfs:comment "Indicates the language in which a question or questionnaire is expressed."@en,
+                          "Indica o idioma no qual uma questão ou questionário está expressa."@pt-br .
+
+:hasLattes rdfs:comment "Links a person to their Lattes CV identifier in the Brazilian academic system."@en,
+                        "Relaciona uma pessoa ao identificador de seu currículo Lattes no sistema acadêmico brasileiro."@pt-br .
+
+:hasLicenceDescription rdfs:comment "Provides a detailed textual description of the usage licence."@en,
+                                   "Fornece uma descrição textual detalhada da licença de uso."@pt-br .
+
+:hasLicenceName rdfs:comment "Indicates the name of the licence associated with a questionnaire."@en,
+                             "Indica o nome da licença associada a um questionário."@pt-br .
+
+:hasLocation rdfs:comment "Specifies the location relevant to the questionnaire or its application."@en,
+                         "Especifica a localização relevante ao questionário ou sua aplicação."@pt-br .
+
+:hasMarkdowntext rdfs:comment "Contains text formatted using Markdown for improved visualization."@en,
+                              "Contém texto formatado em Markdown para melhor visualização."@pt-br .
+
+:hasMaximumValue rdfs:comment "Specifies the upper bound of values allowed for a quantitative response."@en,
+                              "Especifica o limite superior de valores permitidos para uma resposta quantitativa."@pt-br .
+
+:hasMediaRepresentation rdfs:comment "Associates a media representation such as image, audio, or video with a question or questionnaire."@en,
+                                     "Associa uma representação midiática como imagem, áudio ou vídeo a uma questão ou questionário."@pt-br .
+
+:hasMethodology rdfs:comment "Describes the methodological basis underlying the questionnaire or its validation."@en,
+                             "Descreve a base metodológica subjacente ao questionário ou à sua validação."@pt-br .
+
+:hasMinimumValue rdfs:comment "Specifies the lower bound of values allowed for a quantitative response."@en,
+                              "Especifica o limite inferior de valores permitidos para uma resposta quantitativa."@pt-br .
+
+:hasName rdfs:comment "Denotes the full name of an entity, such as a person, questionnaire, or organization."@en,
+                      "Denota o nome completo de uma entidade, como uma pessoa, questionário ou organização."@pt-br .
+
+:hasOrcid rdfs:comment "Specifies the ORCID identifier associated with a researcher."@en,
+                       "Especifica o identificador ORCID associado a um pesquisador."@pt-br .
+
+:hasOrder rdfs:comment "Indicates the sequential order of presentation or application of an item."@en,
+                       "Indica a ordem sequencial de apresentação ou aplicação de um item."@pt-br .
+
+:hasOwner rdfs:comment "Relates an entity to the organization or individual responsible for its maintenance or authorship."@en,
+                       "Relaciona uma entidade à organização ou indivíduo responsável por sua manutenção ou autoria."@pt-br .
+
+:hasPopulation rdfs:comment "Specifies the population or group targeted by the questionnaire."@en,
+                            "Especifica a população ou grupo-alvo do questionário."@pt-br .
+
+:hasPrimming rdfs:comment "Indicates the priming text or stimulus preceding a question to influence interpretation or attention."@en,
+                          "Indica o texto ou estímulo de preparação que antecede uma questão para influenciar sua interpretação ou atenção."@pt-br .
+
+:hasSampling rdfs:comment "Describes the sampling method used in the research study associated with the questionnaire."@en,
+                          "Descreve o método de amostragem utilizado no estudo de pesquisa associado ao questionário."@pt-br .
+
+:hasScoringInstructions rdfs:comment "Provides instructions on how to score or interpret responses to a questionnaire."@en,
+                                    "Fornece instruções sobre como pontuar ou interpretar as respostas de um questionário."@pt-br .
+
+:hasText rdfs:comment "Contains the literal text of a question, answer option, or section title."@en,
+                      "Contém o texto literal de uma questão, opção de resposta ou título de seção."@pt-br .
+
+:hasTitle rdfs:comment "Indicates the formal title of the questionnaire or any of its parts."@en,
+                       "Indica o título formal do questionário ou de qualquer uma de suas partes."@pt-br .
+
+:hasUnit rdfs:comment "Denotes the unit of measurement expected for responses to a question."@en,
+                      "Denota a unidade de medida esperada para as respostas de uma questão."@pt-br .
+
+:hasUri rdfs:comment "Specifies a Uniform Resource Identifier (URI) that uniquely identifies the resource."@en,
+                     "Especifica um Identificador Uniforme de Recurso (URI) que identifica unicamente o recurso."@pt-br .
+
+:hasValue rdfs:comment "Holds the literal or numerical value assigned to a property or variable."@en,
+                       "Contém o valor literal ou numérico atribuído a uma propriedade ou variável."@pt-br .
+
+:hasVersion rdfs:comment "Indicates the version number or label of a questionnaire or element."@en,
+                         "Indica o número ou rótulo de versão de um questionário ou elemento."@pt-br .
+
+:hasWebsite rdfs:comment "Provides a URL that links to the official website of a questionnaire or its authors."@en,
+                         "Fornece uma URL que remete ao site oficial de um questionário ou de seus autores."@pt-br .
+
+:isSkippable rdfs:comment "Indicates whether a question can be optionally skipped by the respondent."@en,
+                          "Indica se uma questão pode ser opcionalmente pulada pelo respondente."@pt-br .
