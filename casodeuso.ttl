@@ -1,0 +1,795 @@
+@prefix : <https://kg.formularioonline.com.br/oqs#> .
+@prefix oqs: <http://purl.org/nsoluti/oqs#> .
+@prefix gufo: <http://purl.org/nemo/gufo#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://kg.formularioonline.com.br/oqs#> rdf:type owl:Ontology;
+    owl:imports oqs:.    
+
+# AUTHORS ##########################
+:PRN17873219837232 a oqs:Author, owl:NamedIndividual ;
+    oqs:hasName "Robert L. Spitzer" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#PRN17873219837232" ;
+    oqs:hasIdentifier "PRN17873219837232" .
+    
+:PRN17873219837233 a oqs:Author, owl:NamedIndividual ;
+    oqs:hasName "Janet B. Williams" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#PRN17873219837233" ;
+    oqs:hasIdentifier "PRN17873219837233" .
+    
+:PRN17873219837234 a oqs:Author, owl:NamedIndividual ;
+    oqs:hasName "Kurt Kroenke" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#PRN17873219837234" ;
+    oqs:hasIdentifier "PRN17873219837234" .
+
+## Authorship
+
+:ATP234893278943798 a oqs:Authorship, owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#ATP234893278943798" ;
+    oqs:authorshipMediatesAuthor :PRN17873219837232 ;
+    oqs:authorshipMediatesAuthor :PRN17873219837233 ;
+    oqs:authorshipMediatesAuthor :PRN17873219837234 ;
+    oqs:authorshipMediatesQuestionnaire :QST187263126391725100 ;
+    oqs:hasIdentifier "ATP234893278943798" .   
+
+##
+
+
+# QUESTIONNAIRES #########################
+# # PRIME-MD
+:QST187263126391725100 a oqs:Questionnaire, owl:NamedIndividual ;
+    oqs:hasVersion "1" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QST187263126391725100" ;
+    oqs:hasAcronym "PRIME-MD" ;
+    oqs:hasIdentifier "QST187263126391725100" ;
+    gufo:hasBeginPointInXSDDdate "1994-12-14" ;
+    oqs:hasBibliograficReference "Spitzer RL, Kroenke K, Williams JBW. Validity and utility of a new procedure for diagnosing mental disorders. Primary Care Evaluation of Mental Disorders. Arch Intern Med. 1994;154(22):2497-2505." ;
+    oqs:hasBibliograficReference "https://jamanetwork.com/journals/jama/article-abstract/383992";
+    oqs:hasName "Primary Care Evaluation of Mental Disorders"@en .
+
+
+:QV12739710823723 a oqs:QuestionnaireValidation, owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QV12739710823723" ;
+    oqs:participatedInValidationOfQuestionnaire :QST187263126391725100 ;
+    oqs:hasDescription "Objective.  —To assess the validity and utility of PRIME-MD (Primary Care Evaluation of Mental Disorders), a new rapid procedure for diagnosing mental disorders by primary care physicians. Design.  —Survey; criterion standard. Setting.  —Four primary care clinics. Subjects.  —A total of 1000 adult patients (369 selected by convenience and 631 selected by site-specific methods to avoid sampling bias) assessed by 31 primary care physicians. Main Outcome Measures.  —PRIME-MD diagnoses, independent diagnoses made by mental health professionals, functional status measures (Short-Form General Health Survey), disability days, health care utilization, and treatment/ referral decisions." ;
+    oqs:hasIdentifier "QV12739710823723" .
+
+
+:QL937827398222 a oqs:QuestionnaireLicence, owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QL937827398222" ;
+    oqs:characterizationQuestionnaireLicence :QST187263126391725100 ;
+    oqs:hasLicence oqs:Proprietary ;
+    oqs:hasLicenceDescription "may be used free of charge in various noncommercial settings (e.g., clinical practice, research studies). For commercial usage (e.g., incorporation into a for-profit product or service) or for modifying the scale (e.g., altering items, combining it with other instruments in a proprietary system), permission or a license agreement from Pfizer is usually required"; 
+    oqs:hasIdentifier "QL937827398222" .    
+
+# PHQ-9 #############################
+:QST187263126391726310 a oqs:Questionnaire, owl:NamedIndividual ;
+    oqs:hasVersion "1" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QST187263126391726310" ;
+    oqs:hasAcronym "PHQ-9" ;
+    oqs:hasIdentifier "QST187263126391726310" ;
+    oqs:hasName "Patient Health Questionnaire-9"@en ;
+    oqs:hasDerivedFromQuestionnaire :QST187263126391725100 ;
+    gufo:hasBeginPointInXSDDdate "2001-09-01" ;
+    oqs:hasMediaRepresentation "https://www.phqscreeners.com/images/sites/g/files/g10060481/f/201412/PHQ-9_English.pdf" ;
+    oqs:hasDerivedFromQuestionnaire :QST187263126391725100 ;
+    oqs:hasBibliograficReference "KROENKE, Kurt; SPITZER, Robert L.; WILLIAMS, Janet BW. The PHQ‐9: validity of a brief depression severity measure. Journal of general internal medicine, v. 16, n. 9, p. 606-613, 2001" ;
+    oqs:hasDescription "The PHQ-9 is a 9-item self-report questionnaire that assesses the severity of depression symptoms. It is designed to be completed by patients themselves and is widely used in primary care settings."@en ;
+    oqs:hasScoringInstructions "The PHQ-9 is scored by summing the responses to all 9 items, resulting in a total score ranging from 0 to 27. The official scoring guidelines (Kroenke et al., 2001) provide the following interpretation: 0–4: Minimal depression 5–9: Mild depression 10–14: Moderate depression 15–19: moderately severe depression 20–27: Severe depression A score of ≥10 is often used as a cutoff for identifying clinically significant depressive symptoms requiring further evaluation. "@en .
+
+:QSTS1872634938434 a oqs:QuestionnaireStatus, owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QSTS1872634938434" ;
+    oqs:hasQuestionnaireStatusType :QuestionnairePublished ;
+    oqs:hasQuestionnaireStatusInheresInQuestionnaire :QST187263126391726310 ;
+    oqs:hasIdentifier "QSTS1872634938434" .
+
+:AP1872631263917263102 a oqs:Authorship, owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#AP1872631263917263102" ;
+    oqs:hasAuthorshipMediatesPerson :PRN17873219837232 ;
+    oqs:hasAuthorshipMediatesPerson :PRN17873219837233 ;
+    oqs:hasAuthorshipMediatesPerson :PRN17873219837234 ;
+    oqs:hasAuthorshipMediatesQuestionnaire :QST187263126391726310 ;
+    oqs:hasIdentifier "AP1872631263917263102" .
+
+:QL937827398223 a oqs:QuestionnaireLicence, owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QL937827398223" ;
+    oqs:characterizationQuestionnaireLicence :QST187263126391726310 ;
+    oqs:hasLicence oqs:Proprietary ;
+    oqs:hasLicenceName "Licença de Uso Gratuito com Direitos Autorais Reservados" ;
+    oqs:hasOwner "Pfizer" ;
+    oqs:hasWebsite "https://www.phqscreeners.com/" ;
+    oqs:hasLicenceDescription "may be used free of charge in various noncommercial settings (e.g., clinical practice, research studies). For commercial usage (e.g., incorporation into a for-profit product or service) or for modifying the scale (e.g., altering items, combining it with other instruments in a proprietary system), permission or a license agreement from Pfizer is usually required"; 
+    oqs:hasIdentifier "QL937827398223" . 
+
+:STN8327498237482 a oqs:Section,
+           owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#STN8327498237482" ;
+    oqs:sectionIsCollectionMemberOfQuestionnaire :QST187263126391726310 ;
+    oqs:hasIdentifier "STN8327498237482" .
+
+#//q1    
+:QTN82384729384789386 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasInitialStatement "Over the *last 2 weeks*, how often have you been bothered by any of the following problems?"@en ;
+    oqs:hasText "Feeling down, depressed, or hopeless?"@en ;
+    oqs:hasIdentifier "QTN82384729384789386" ;
+    oqs:isSkippable false;
+    oqs:hasOrder 1;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN82384729384789386" ;
+    oqs:questionIsComponentOfSection :STN8327498237482 . 
+
+:VAR98372893728921 a oqs:Variable,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "VAR98372893728921" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#VAR98372893728921" ;
+    oqs:variableIsComponentOfQuestion :QTN82384729384789386 .
+    
+:SC7273892378281 a oqs:Scale,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "SC7273892378281" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#SC7273892378281" ;
+    oqs:characterizationVariableScale :VAR98372893728921 ;
+    oqs:hasScaleType oqs:LikertTypeScale .
+
+:LM2323273251211 a oqs:LevelsOfMeasurement,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "LM2323273251211" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#LM2323273251211" ;
+    oqs:characterizationVariableLevelsofMeasurement :VAR98372893728921 ;
+    oqs:hasLevelsOfMeasurementType oqs:Ordinal .
+
+#//q2   
+:QTN823847293847893862 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasInitialStatement "Over the *last 2 weeks*, how often have you been bothered by any of the following problems?"@en ;
+    oqs:hasText "Little interest or pleasure in doing things?"@en ;
+    oqs:hasIdentifier "QTN823847293847893862" ;
+    oqs:isSkippable false;
+    oqs:hasOrder 2;    
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN823847293847893862" ;
+    oqs:questionIsComponentOfSection :STN8327498237482 . 
+
+:VAR9837289372892122 a oqs:Variable,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "VAR9837289372892122" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#VAR9837289372892122" ;
+    oqs:variableIsComponentOfQuestion :QTN823847293847893862 .
+    
+:SC72738923782812 a oqs:Scale,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "SC72738923782812" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#SC72738923782812" ;
+    oqs:characterizationVariableScale :VAR9837289372892122 ;
+    oqs:hasScaleType oqs:LikertTypeScale .
+
+:LM23232732512112 a oqs:LevelsOfMeasurement,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "LM23232732512112" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#LM23232732512112" ;
+    oqs:characterizationVariableLevelsofMeasurement :VAR9837289372892122 ;
+    oqs:hasLevelsOfMeasurementType oqs:Ordinal .
+
+#//q3   
+:QTN8238472938478938623 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasInitialStatement "Over the *last 2 weeks*, how often have you been bothered by any of the following problems?"@en ;
+    oqs:hasText "Trouble falling or staying asleep, or sleeping too much?"@en ;
+    oqs:hasIdentifier "QTN8238472938478938623" ;
+    oqs:isSkippable false;
+    oqs:hasOrder 3;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN8238472938478938623" ;
+    oqs:questionIsComponentOfSection :STN8327498237482 . 
+
+:VAR98372893728921223 a oqs:Variable,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "VAR98372893728921223" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#VAR98372893728921223" ;
+    oqs:variableIsComponentOfQuestion :QTN8238472938478938623 .
+    
+:SC727389237828123 a oqs:Scale,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "SC727389237828123" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#SC727389237828123" ;
+    oqs:characterizationVariableScale :VAR98372893728921223 ;
+    oqs:hasScaleType oqs:LikertTypeScale .
+
+:LM232327325121123 a oqs:LevelsOfMeasurement,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "LM232327325121123" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#LM232327325121123" ;
+    oqs:characterizationVariableLevelsofMeasurement :VAR98372893728921223 ;
+    oqs:hasLevelsOfMeasurementType oqs:Ordinal .
+#//q4   
+:QTN8238472938478938624 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasInitialStatement "Over the *last 2 weeks*, how often have you been bothered by any of the following problems?"@en ;
+    oqs:hasText "Feeling tired or having little energy?"@en ;
+    oqs:hasIdentifier "QTN8238472938478938624" ;
+    oqs:isSkippable false;
+    oqs:hasOrder 4;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN8238472938478938624" ;
+    oqs:questionIsComponentOfSection :STN8327498237482 . 
+
+:VAR98372893728921224 a oqs:Variable,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "VAR98372893728921224" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#VAR98372893728921224" ;
+    oqs:variableIsComponentOfQuestion :QTN8238472938478938624 .
+    
+:SC727389237828124 a oqs:Scale,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "SC727389237828124" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#SC727389237828124" ;
+    oqs:characterizationVariableScale :VAR98372893728921224 ;
+    oqs:hasScaleType oqs:LikertTypeScale .
+
+:LM232327325121124 a oqs:LevelsOfMeasurement,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "LM232327325121124" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#LM232327325121124" ;
+    oqs:characterizationVariableLevelsofMeasurement :VAR98372893728921224 ;
+    oqs:hasLevelsOfMeasurementType oqs:Ordinal .
+
+#//q5   
+:QTN8238472938478938625 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasInitialStatement "Over the *last 2 weeks*, how often have you been bothered by any of the following problems?"@en ;
+    oqs:hasText "Poor appetite or overeating?"@en ;
+    oqs:hasIdentifier "QTN8238472938478938625" ;
+    oqs:isSkippable false;
+    oqs:hasOrder 5;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN8238472938478938625" ;
+    oqs:questionIsComponentOfSection :STN8327498237482 . 
+
+:VAR98372893728921225 a oqs:Variable,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "VAR98372893728921225" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#VAR98372893728921225" ;
+    oqs:variableIsComponentOfQuestion :QTN8238472938478938625 .
+    
+:SC727389237828125 a oqs:Scale,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "SC727389237828125" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#SC727389237828125" ;
+    oqs:characterizationVariableScale :VAR98372893728921225 ;
+    oqs:hasScaleType oqs:LikertTypeScale .
+
+:LM232327325121125 a oqs:LevelsOfMeasurement,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "LM232327325121125" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#LM232327325121125" ;
+    oqs:characterizationVariableLevelsofMeasurement :VAR98372893728921225 ;
+    oqs:hasLevelsOfMeasurementType oqs:Ordinal .
+#//q6   
+:QTN8238472938478938626 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasInitialStatement "Over the *last 2 weeks*, how often have you been bothered by any of the following problems?"@en ;
+    oqs:hasText "Feeling bad about yourself - or that you are a failure or have let yourself or your family down?"@en ;
+    oqs:hasIdentifier "QTN8238472938478938626" ;
+    oqs:isSkippable false;
+    oqs:hasOrder 6;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN8238472938478938626" ;
+    oqs:questionIsComponentOfSection :STN8327498237482 . 
+
+:VAR98372893728921226 a oqs:Variable,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "VAR98372893728921226" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#VAR98372893728921226" ;
+    oqs:variableIsComponentOfQuestion :QTN8238472938478938626 .
+    
+:SC727389237828126 a oqs:Scale,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "SC727389237828126" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#SC727389237828126" ;
+    oqs:characterizationVariableScale :VAR98372893728921226 ;
+    oqs:hasScaleType oqs:LikertTypeScale .
+
+:LM232327325121126 a oqs:LevelsOfMeasurement,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "LM232327325121126" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#LM232327325121126" ;
+    oqs:characterizationVariableLevelsofMeasurement :VAR98372893728921226 ;
+    oqs:hasLevelsOfMeasurementType oqs:Ordinal .
+#//q7   
+:QTN8238472938478938627 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasInitialStatement "Over the *last 2 weeks*, how often have you been bothered by any of the following problems?"@en ;
+    oqs:hasText "Trouble concentrating on things, such as reading the newspaper or watching television?"@en ;
+    oqs:hasIdentifier "QTN8238472938478938627" ;
+    oqs:isSkippable false;
+    oqs:hasOrder 7;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN8238472938478938627" ;
+    oqs:questionIsComponentOfSection :STN8327498237482 . 
+
+:VAR98372893728921227 a oqs:Variable,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "VAR98372893728921227" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#VAR98372893728921227" ;
+    oqs:variableIsComponentOfQuestion :QTN8238472938478938627 .
+    
+:SC727389237828127 a oqs:Scale,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "SC727389237828127" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#SC727389237828127" ;
+    oqs:characterizationVariableScale :VAR98372893728921227 ;
+    oqs:hasScaleType oqs:LikertTypeScale .
+
+:LM232327325121127 a oqs:LevelsOfMeasurement,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "LM232327325121127" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#LM232327325121127" ;
+    oqs:characterizationVariableLevelsofMeasurement :VAR98372893728921227 ;
+    oqs:hasLevelsOfMeasurementType oqs:Ordinal .
+#//q8   
+:QTN8238472938478938628 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasInitialStatement "Over the *last 2 weeks*, how often have you been bothered by any of the following problems?"@en ;
+    oqs:hasText "Moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?"@en ;
+    oqs:hasIdentifier "QTN8238472938478938628" ;
+    oqs:isSkippable false;
+    oqs:hasOrder 8;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN8238472938478938628" ;
+    oqs:questionIsComponentOfSection :STN8327498237482 . 
+
+:VAR98372893728921228 a oqs:Variable,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "VAR98372893728921228" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#VAR98372893728921228" ;
+    oqs:variableIsComponentOfQuestion :QTN8238472938478938628 .
+    
+:SC727389237828128 a oqs:Scale,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "SC727389237828128" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#SC727389237828128" ;
+    oqs:characterizationVariableScale :VAR98372893728921228 ;
+    oqs:hasScaleType oqs:LikertTypeScale .
+
+:LM232327325121128 a oqs:LevelsOfMeasurement,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "LM232327325121128" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#LM232327325121128" ;
+    oqs:characterizationVariableLevelsofMeasurement :VAR98372893728921228 ;
+    oqs:hasLevelsOfMeasurementType oqs:Ordinal .
+#//q9   
+:QTN8238472938478938629 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasInitialStatement "Over the *last 2 weeks*, how often have you been bothered by any of the following problems?"@en ;
+    oqs:hasText "Thoughts that you would be better off dead, or thoughts of hurting yourself in some way?"@en ;
+    oqs:hasIdentifier "QTN8238472938478938629" ;
+    oqs:isSkippable false;
+    oqs:hasOrder 9;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN8238472938478938629" ;
+    oqs:questionIsComponentOfSection :STN8327498237482 . 
+
+:VAR98372893728921229 a oqs:Variable,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "VAR98372893728921229" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#VAR98372893728921229" ;
+    oqs:variableIsComponentOfQuestion :QTN8238472938478938629 .
+    
+:SC727389237828129 a oqs:Scale,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "SC727389237828129" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#SC727389237828129" ;
+    oqs:characterizationVariableScale :VAR98372893728921229 ;
+    oqs:hasScaleType oqs:LikertTypeScale .
+
+:LM232327325121129 a oqs:LevelsOfMeasurement,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "LM232327325121129" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#LM232327325121129" ;
+    oqs:characterizationVariableLevelsofMeasurement :VAR98372893728921229 ;
+    oqs:hasLevelsOfMeasurementType oqs:Ordinal .
+
+:ROS187263126391726313 a oqs:ResponseOptions,
+            owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#ROS187263126391726313" ;
+    oqs:hasIdentifier "ROS187263126391726313" ;
+    oqs:responseOptionsIsComponentOfClosedQuestion :QTN8238472938478938629 ;
+    oqs:responseOptionsIsComponentOfClosedQuestion :QTN8238472938478938628 ;
+    oqs:responseOptionsIsComponentOfClosedQuestion :QTN8238472938478938627 ;
+    oqs:responseOptionsIsComponentOfClosedQuestion :QTN8238472938478938626 ;
+    oqs:responseOptionsIsComponentOfClosedQuestion :QTN8238472938478938625 ;
+    oqs:responseOptionsIsComponentOfClosedQuestion :QTN8238472938478938624 ;
+    oqs:responseOptionsIsComponentOfClosedQuestion :QTN8238472938478938623 ;
+    oqs:responseOptionsIsComponentOfClosedQuestion :QTN823847293847893862 ;
+    oqs:responseOptionsIsComponentOfClosedQuestion :QTN82384729384789386 .
+
+:RO187263126391726315 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO187263126391726315" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO187263126391726315" ;
+    oqs:hasText "Not at all" ;
+    oqs:hasValue "0" ;
+    oqs:hasOrder "1" ;
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :ROS187263126391726313 .  
+    
+:RO187263126391726316 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO187263126391726316" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO187263126391726316" ;
+    oqs:hasText "Several days" ;
+    oqs:hasValue "1" ;
+    oqs:hasOrder "2" ;
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :ROS187263126391726313 .
+
+:RO187263126391726317 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO187263126391726317" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO187263126391726317" ;
+    oqs:hasText "More than half days" ;
+    oqs:hasValue "2" ;
+    oqs:hasOrder "3" ;
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :ROS187263126391726313 . 
+
+:RO187263126391726318 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO187263126391726318" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO187263126391726318" ;
+    oqs:hasText "Nearly every day" ;
+    oqs:hasValue "3" ;
+    oqs:hasOrder "4" ;
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :ROS187263126391726313 .     
+
+
+:QV127397108237231 a oqs:QuestionnaireValidation, owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QV127397108237231" ;
+    oqs:hasLanguage "Inglês" ;
+    oqs:hasLocation "Estados Unidos" ;
+    gufo:hasBeginPointInXSDDdate "2001-01-01"^^xsd:date ;
+    gufo:hasEndPointInXSDDdate "2001-01-01"^^xsd:date ;
+    oqs:hasPopulation "Pacientes de cuidados primários e clínicas de obstetrícia/ginecologia" ;
+    oqs:hasContext "8 clínicas nos Estados Unidos" ;
+    oqs:hasBibliograficReference "https://doi.org/10.1046/j.1525-1497.2001.016009606.x" ;
+    oqs:hasMethodology "Estudo de validação multicêntrico";
+    oqs:hasSampling "3000 pacientes ";
+    oqs:hasDescription "Validação original do instrumento, estabelecendo propriedades psicométricas fundamentais, pontos de corte e utilidade clínica para rastreamento, diagnóstico e monitoramento da depressão" ;
+
+    oqs:participatedInValidationOfQuestionnaire :QTN82384729384789386 ;
+    oqs:hasQuestionnaireValidationType oqs:ConstructValidity ;
+    oqs:hasQuestionnaireValidationType oqs:CriterionValidity ;
+    oqs:hasQuestionnaireValidationType oqs:ReliabilityTesting ;
+    oqs:hasIdentifier "QV127397108237231" .
+
+
+:QV127397108237232 a oqs:QuestionnaireValidation, owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QV127397108237232" ;
+    oqs:hasLanguage "Inglês" ;
+    oqs:hasLocation "Estados Unidos" ;
+    gufo:hasBeginPointInXSDDdate "2006-01-01"^^xsd:date ;
+    oqs:hasPopulation "Pacientes com depressão em tratamento" ;
+    oqs:hasContext "Clínicas de cuidados primários" ;
+    oqs:hasBibliograficReference "https://doi.org/10.1186/s12888-020-02885-6" ;
+    oqs:hasMethodology "Estudo longitudinal";
+    oqs:hasSampling "434 pacientes";
+    oqs:hasDescription "Avaliação da sensibilidade do PHQ-9 para detectar mudanças na gravidade dos sintomas ao longo do tempo e resposta ao tratamento" ;
+
+    oqs:participatedInValidationOfQuestionnaire :QTN82384729384789386 ;
+    oqs:hasQuestionnaireValidationType oqs:ReliabilityTesting ;
+    oqs:hasQuestionnaireValidationType oqs:CriterionValidity ;
+    oqs:hasIdentifier "QV127397108237232" .
+
+
+:QV127397108237233 a oqs:QuestionnaireValidation, owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QV127397108237233" ;
+    oqs:hasLanguage "Inglês" ;
+    oqs:hasLocation "Estados Unidos" ;
+    gufo:hasBeginPointInXSDDdate "2001-01-01"^^xsd:date ;
+    oqs:hasPopulation "Incluiu 3.000 pacientes de cuidados primários, 3.000 de obstetrícia/ginecologia e 580 para validação de critério, totalizando 6.580 participantes" ;
+    oqs:hasContext "Realizado em configurações de cuidados primários e obstetrícia/ginecologia nos Estados Unidos" ;
+    oqs:hasBibliograficReference "https://doi.org/10.1046/j.1525-1497.2001.016009606.x" ;
+    oqs:hasMethodology "Avaliou confiabilidade usando alpha de Cronbach (0,89 em cuidados primários, 0,86 em obstetrícia/ginecologia), correlação teste-reteste (0,84), validade de construto (correlação com a escala de saúde mental SF-20 de 0,73) e validade de critério (sensibilidade 88%, especificidade 88%)";
+    oqs:hasSampling "Amostra total de 6.580, com detalhes de subgrupos para validação de critério";
+
+    oqs:hasDescription "O estudo avaliou a confiabilidade, incluindo teste-reteste, validade de construto (comparação com SF-20) e validade de critério (comparação com diagnóstico profissional de saúde mental), mostrando alta sensibilidade e especificidade" ;
+
+    oqs:participatedInValidationOfQuestionnaire :QTN82384729384789386 ;
+    oqs:hasQuestionnaireValidationType oqs:ReliabilityTesting ;
+    oqs:hasQuestionnaireValidationType oqs:CriterionValidity ;
+    oqs:hasQuestionnaireValidationType oqs:ConstructValidity ;
+    oqs:hasIdentifier "QV127397108237233" .
+
+
+# # PNS-2019 #############################
+:QST8723462873463 a oqs:Questionnaire, owl:NamedIndividual ;
+    oqs:hasName "Pesquisa Nacional de Saúde"@pt-BR ;
+    oqs:hasIdentifier "QST8723462873463" ;
+    oqs:hasAcronym "PNS-2019" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QST8723462873463" ;
+    oqs:hasVersion "2019" ;
+    oqs:hasDescription "A Pesquisa Nacional de Saúde (PNS) é um inquérito populacional realizado pelo IBGE em parceria com o Ministério da Saúde"@pt-BR ;
+    gufo:hasBeginPointInXSDDdate "2019-08-01"^^xsd:date.
+
+:QSTS2347328732897 a oqs:QuestionnaireStatus, owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QSTS2347328732897" ;
+    oqs:hasQuestionnaireStatusType :QuestionnairePublished ;
+    oqs:questionnaireStatusInheresInQuestionnaire :QST8723462873463 ;
+    gufo:hasBeginPointInXSDDdate "2019-08-01"^^xsd:date .
+
+:STN8327498237483 a oqs:Section,
+           owl:NamedIndividual ;
+    oqs:hasTitle "Percepção do estado de saúde"@pt-BR ;
+    oqs:hasIdentifier "STN8327498237483" ;
+    oqs:hasAcronym "N" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#STN8327498237483" ;
+    oqs:sectionIsCollectionMemberOfQuestionnaire :QST8723462873463 .
+
+:QTN82384729384789387 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasText "Nas duas últimas semanas,com que frequência o(a) Sr(a) teve problemas no sono, como dificuldade para adormecer, acordar frequentemente à noite ou dormir mais do que de costume?"@pt-BR ;
+    oqs:hasIdentifier "QTN82384729384789387" ;
+    oqs:hasAcronym "N10" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN82384729384789387" ;
+    oqs:questionIsComponentOfSection :STN8327498237483 .
+
+:QTNO0394839483943 a oqs:QuestionOrigin,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "QTNO0394839483943" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTNO0394839483943" ;
+    oqs:hasDerivedFromQuestion :QTN82384729384789386 ;
+    oqs:questionOriginInheresInQuestion :QTN82384729384789387 ;
+    oqs:hasOriginType oqs:Translation .     
+
+:VAR9837289372893 a oqs:Variable,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "VAR9837289372893";
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#VAR9837289372893";
+    oqs:hasLevelOfMeasurement :Ordinal ;
+    oqs:variableIsComponentOfQuestion :QTN82384729384789387 ;
+    oqs:hasScale :SC727389237829 .
+
+:SC727389237829 a oqs:Scale,
+            owl:NamedIndividual;
+            oqs:hasIdentifier "SC727389237829";
+            oqs:hasUri"https://kg.formularioonline.com.br/oqs#SC727389237829"; 
+            oqs:characterizationVariableScale :VAR9837289372893 ;
+            oqs:hasScaleType oqs:LikertTypeScale .
+            
+:LM232327325121 a oqs:LevelsOfMeasurement,
+            owl:NamedIndividual;
+            oqs:hasIdentifier "LM232327325121";
+            oqs:hasUri"https://kg.formularioonline.com.br/oqs#LM232327325121"; 
+            oqs:characterizationVariableLevelsofMeasurement :VAR9837289372893 ;
+            oqs:hasLevelsOfMeasurementType oqs:Ordinal .
+
+
+:ROS29837498374839 a oqs:ResponseOptions,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "ROS29837498374839";
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#ROS29837498374839";
+    oqs:responseOptionsIsComponentOfClosedQuestion :QTN82384729384789387 .
+
+:RO2372837283723 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO2372837283723";
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO2372837283723";
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :ROS29837498374839 ;
+    oqs:hasText "Nenhum dia"@pt-BR ;
+    oqs:hasValue "1".
+
+:RO2372837283724 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO2372837283724";
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO2372837283724";
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :ROS29837498374839 ;
+    oqs:hasText "Menos da metade dos dias"@pt-BR ;
+    oqs:hasValue "2".
+
+:RO2372837283725 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO2372837283725";
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO2372837283725";
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :ROS29837498374839 ;
+    oqs:hasText "Mais da metade dos dias"@pt-BR ;
+    oqs:hasValue "3" .
+
+:RO2372837283726 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO2372837283726";
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO2372837283726";
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :ROS29837498374839 ;
+    oqs:hasText "Quase todos os dias"@pt-BR ;
+    oqs:hasValue "4".
+
+#branching
+
+:STN83274982374831 a oqs:Section,
+           owl:NamedIndividual ;
+    oqs:hasTitle " Módulo O - Acidentes "@pt-BR ;
+    oqs:hasIdentifier "STN83274982374831" ;
+    oqs:hasAcronym "O" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#STN83274982374831" ;
+    oqs:sectionIsCollectionMemberOfQuestionnaire :QST8723462873463 .
+
+:STN83274982374832 a oqs:Section,
+           owl:NamedIndividual ;
+    oqs:hasTitle "Módulo P - Estilos de Vida"@pt-BR ;
+    oqs:hasIdentifier "STN83274982374832" ;
+    oqs:hasAcronym "P" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#STN83274982374832" ;
+    oqs:sectionIsCollectionMemberOfQuestionnaire :QST8723462873463 .    
+
+:QTN823847293847893871 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasText "O(a) Sr(a) tem alguma sequela física permanente decorrente deste acidente de trânsito?"@pt-BR ;
+    oqs:hasIdentifier "QTN823847293847893871" ;
+    oqs:hasAcronym "O20a" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN823847293847893871" ;
+    oqs:questionIsComponentOfSection :STN83274982374831 .   
+
+:QTN8238472938478938712 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasText "Nos últimos doze meses o(a) Sr(a) se envolveu em algum acidente de trabalho (sem considerar os acidentes de trânsito e/ou de deslocamento para o trabalho)?"@pt-BR ;
+    oqs:hasIdentifier "QTN8238472938478938712" ;
+    oqs:hasAcronym "O21" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN8238472938478938712" ;
+    oqs:questionIsComponentOfSection :STN83274982374831 .   
+
+:QTN8238472938478938713 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasText "O(a) Sr(a) sabe seu peso?"@pt-BR ;
+    oqs:hasIdentifier "QTN8238472938478938713" ;
+    oqs:hasAcronym "P1a" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN8238472938478938713" ;
+    oqs:questionIsComponentOfSection :STN83274982374832 .   
+
+:QBG192387126372 a oqs:QuestionBranching,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "QBG192387126372" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QBG192387126372" ;
+    oqs:hasCondition "Se E11 = 1 ao 3";
+    oqs:fromQuestion :QTN823847293847893871 ;
+    oqs:toQuestion :QTN8238472938478938712 .    
+
+:QBG192387126373 a oqs:QuestionBranching,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "QBG192387126373" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QBG192387126373" ;
+    oqs:hasCondition "Se E11 != 1 ao 3";
+    oqs:fromQuestion :QTN823847293847893871 ;
+    oqs:toQuestion :QTN8238472938478938713 .   
+ 
+ 
+# NHANES ######################
+:QST8723462873464 a oqs:Questionnaire, owl:NamedIndividual ;
+    oqs:hasVersion "2024" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QST8723462873464" ;
+    oqs:hasAcronym "NHANES 2024" ;
+    oqs:hasIdentifier "QST8723462873464" ;
+    oqs:hasName "National Health and Nutrition Examination Survey"@en .
+
+:STN8327498237484 a oqs:Section,
+           owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#STN8327498237484" ;
+    oqs:hasTitle "Mental Health - Depression Sceener"@en ;
+    oqs:hasName "DPQ_L";
+    oqs:sectionIsCollectionMemberOfQuestionnaire :QST8723462873464 ;
+    oqs:hasIdentifier "STN8327498237484" .
+
+:QTN82384729384789388 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasText "[Over the last 2 weeks, how often have you been bothered by any of the following problems:] trouble falling or staying asleep, or sleeping too much?  "@en ;
+    oqs:hasIdentifier "QTN82384729384789388" ;
+    oqs:hasOriginType "LiteralCopy" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN82384729384789388" ;
+    oqs:questionIsComponentOfSection :STN8327498237484 .
+
+:QTNO0394839483943 a oqs:QuestionOrigin,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "QTNO0394839483943" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTNO0394839483943" ;
+    oqs:hasDerivedFromQuestion :QTN82384729384789386 ;
+    oqs:questionOriginInheresInQuestion :QTN82384729384789388 ;
+    oqs:hasOriginType oqs:LiteralCopy .    
+
+
+:VAR9837289372893 a oqs:Variable,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "VAR9837289372893" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#VAR9837289372893" ;
+    oqs:hasName "DPQ030";
+    oqs:hasLevelOfMeasurement :Ordinal ;
+    :characterizationIsComponentOfQuestion :QTN82384729384789388 .
+    
+:ROS29837498374840 a oqs:ResponseOptions,
+            owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#ROS29837498374840" ;
+    oqs:hasIdentifier "ROS29837498374840" ;
+    oqs:responseOptionsIsComponentOfClosedQuestion :QTN82384729384789388 .
+
+:RO2372837283730 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO2372837283730" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO2372837283730" ;
+    oqs:hasText "Not at all"@en ;
+    oqs:hasValue "0" ;
+    oqs:hasOrder "1" ;
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :ROS29837498374840 .  
+    
+:RO2372837283731 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO2372837283731" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO2372837283731" ;
+    oqs:hasText "Several days"@en ;
+    oqs:hasValue "1" ;
+    oqs:hasOrder "2" ;
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :ROS29837498374840 .
+
+:RO2372837283732 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO2372837283731" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO2372837283732" ;
+    oqs:hasText "More than half the days"@en ;
+    oqs:hasValue "2" ;
+    oqs:hasOrder "3" ;
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :ROS29837498374840 . 
+
+:RO2372837283733 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO2372837283733" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO2372837283733" ;
+    oqs:hasText "Nearly every day"@en ;
+    oqs:hasValue "3" ;
+    oqs:hasOrder "4" ;
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :ROS29837498374840 .
+
+# MHAS ######################
+:QST8723462873465 a oqs:Questionnaire, owl:NamedIndividual ;
+    oqs:hasVersion "2021" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QST8723462873465" ;
+    oqs:hasAcronym "MHAS 2021" ;
+    oqs:hasIdentifier "QST8723462873465" ;
+    oqs:hasName "Mexican Health and Aging Study"@en .
+
+:STN8327498237485 a oqs:Section,
+           owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#STN8327498237485" ;
+    oqs:hasTitle "Section C. Health"@en ;
+    oqs:hasName "C";
+    oqs:sectionIsCollectionMemberOfQuestionnaire :QST8723462873465 ;
+    oqs:hasIdentifier "STN8327498237485" .
+
+:QTN82384729384789389 a oqs:ClosedQuestion,
+         owl:NamedIndividual ;
+    oqs:hasText "These questions refer to how you have felt during the past week. For each question please tell me if the majority of the time..."@en ;
+    oqs:hasInstruction "RECORD ONE OPTION IN EACH ROW"@en ;
+    oqs:hasIdentifier "QTN82384729384789389" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#QTN82384729384789389" ;
+    oqs:questionIsComponentOfSection :STN8327498237485 .
+
+
+:VAR9837289372894 a oqs:Variable,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "VAR9837289372894" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#VAR9837289372894" ;
+    oqs:hasText "You felt your sleep was restless";
+    oqs:hasLevelOfMeasurement :Ordinal ;    
+    oqs:hasScale :DichotomousScale ;
+    :characterizationIsComponentOfQuestion :QTN82384729384789389 .
+    
+:ROS29837498374841 a oqs:ResponseOptions,
+            owl:NamedIndividual ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#ROS29837498374841" ;
+    oqs:hasIdentifier "ROS29837498374841" ;
+    oqs:responseOptionsIsComponentOfClosedQuestion :QN18726312639172702 .
+
+:RO2372837283740 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO2372837283740" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO2372837283740" ;
+    oqs:hasText "YES"@en ;
+    oqs:hasValue "1" ;
+    oqs:hasOrder "1" ;
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :RS18726312639172704 .  
+    
+:RO2372837283741 a oqs:ResponseOption,
+            owl:NamedIndividual ;
+    oqs:hasIdentifier "RO2372837283741" ;
+    oqs:hasUri"https://kg.formularioonline.com.br/oqs#RO2372837283741" ;
+    oqs:hasText "NO"@en ;
+    oqs:hasValue "2" ;
+    oqs:hasOrder "2" ;
+    oqs:responseOptionIsCollectionMemberOfResponseOptions :RO187263126391726394 .
