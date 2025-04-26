@@ -27,5 +27,4 @@ The complete documentation of the ontology, including detailed conceptual models
 ## License
 
 This work is distributed under the terms of the [Creative Commons Attribution License CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode).
-
-Unde
+Under this license, you are free to share and adapt the material for any purpose, even commercially, provided appropriate credit is given.
