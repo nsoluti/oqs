@@ -40,9 +40,9 @@
     vann:preferredNamespaceUri "https://purl.org/nsoluti/oqs#"^^xsd:anyURI ;
     rdfs:comment """  Cite this work as:     This work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.  For the source repository, see: <https://github.com/nsoluti/oqs>"""@en .
 
-:Instrument rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+:DataCollectionInstrument rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Instrument"@en.
+    rdfs:label "Data Collection Instrument"@en.
 :Detector rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Detector"@en.
@@ -229,7 +229,7 @@
 :Ramification rdf:type owl:Class, gufo:SituationType, owl:NamedIndividual;
     rdfs:subClassOf gufo:Situation;
     rdfs:label "Ramification"@en.
-:Questionnaire rdfs:subClassOf :Instrument.
+:Questionnaire rdfs:subClassOf :DataCollectionInstrument.
 :Author rdfs:subClassOf :Person.
 :Question rdfs:subClassOf :Detector.
 :OpenQuestion rdfs:subClassOf :Question.
@@ -554,7 +554,7 @@
 :Detector rdfs:comment "Category representing instruments used to sense or detect data values in empirical environments."@en,
         "Categoria que representa instrumentos usados para detectar ou captar valores de dados em ambientes empíricos."@pt-br .
 
-:Instrument rdfs:comment "Artifact used for the structured and systematic acquisition of information, including physical, elicitation, or computational tools."@en,
+:DataCollectionInstrument rdfs:comment "Artifact used for the structured and systematic acquisition of information, including physical, elicitation, or computational tools."@en,
         "Artefato utilizado para a aquisição estruturada e sistemática de informações, incluindo instrumentos físicos, de elicitação ou computacionais."@pt-br .
 
 :LevelsOfMeasurement rdfs:comment "Characterization of the nature and properties of variables in terms of measurement theory (nominal, ordinal, interval, ratio)."@en,
