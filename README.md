@@ -2,7 +2,7 @@
 
 ![OQS Logo](./oqs.png)
 
-The **OQS (Ontology for Questionnaires and Scales)** aims to provide a structured, formal, and reusable representation of concepts related to questionnaires, measurement scales, variables, and their metadata.
+The **OQS (Ontology for Questionnaires and Scales)** aims to represent research questionnaires and their components, ensuring persistent identifiers, provenance metadata, and versioning, in alignment with the FAIR principles. It supports the accessibility, findability, standardization, interoperability, and reuse of questionnaire elements and the data collected through these instruments.
 
 ## Access to the Ontology
 
