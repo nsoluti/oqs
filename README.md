@@ -9,6 +9,7 @@ The **OQS (Ontology for Questionnaires and Scales)** aims to represent research 
 The ontology is available in two ways:
 - By accessing the file [`oqs.ttl`](./oqs.ttl) directly.
 - Through the persistent URI: [http://purl.org/nsoluti/oqs](http://purl.org/nsoluti/oqs).
+- The reference conceptual model of the ontology is visually available in the file [`oqs.png`](./oqs.png).
 
 ## Use Cases and Validation
 
@@ -27,4 +28,4 @@ The complete documentation of the ontology, including detailed conceptual models
 
 This work is distributed under the terms of the [Creative Commons Attribution License CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode).
 
-Under this license, you are free to share and adapt the material for any purpose, even commercially, provided appropriate credit is given.
+Unde
