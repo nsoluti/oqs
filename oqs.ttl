@@ -39,7 +39,7 @@
     owl:priorVersion <http://purl.org/nsoluti/oqs#/1.0.0> ;
     owl:backwardCompatibleWith <http://purl.org/nsoluti/oqs#/1.0.0> ;
     vann:preferredNamespacePrefix "oqs"@en ;
-    vann:preferredNamespaceUri "https://purl.org/nsoluti/oqs#"^^xsd:anyURI ;
+    vann:preferredNamespaceUri "http://purl.org/nsoluti/oqs#"^^xsd:anyURI ;
     vs:term_status "stable"@en ;
     rdfs:comment """  Cite this work as:     This work is distributed under Creative Commons Attribution License CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>.  For the source repository, see: <https://github.com/nsoluti/oqs>"""@en ;
     owl:imports gufo:.
@@ -616,6 +616,10 @@
 :Question rdfs:comment "Type of detector designed to capture specific information from respondents through structured statements, which can assume an open format (allowing free responses) or closed format (with predetermined response options) depending on the objective of data collection."@en,
         "Tipo de detector destinado a captar informações específicas de respondentes por meio de enunciados estruturados, podendo assumir formato aberto (permitindo respostas livres) ou fechado (com opções de resposta predeterminadas) conforme o objetivo da coleta de dados."@pt-br .
 
+:QuestionOriginType rdfs:comment "Enumeration of question origin types, such as Original, Literal Copy, Adapt to Context, Replace Terms, and Translation, that specify the provenance of a question from a questionnaire."@en,
+        "Enumeração dos tipos de origem de questões, como Original, Cópia Literal, Adaptação ao Contexto, Substituição de Termos e Tradução, que especificam a proveniência de uma questão de um questionário."@pt-br .
+
+
 :Questionnaire rdfs:comment "Data collection instrument used to obtain information provided by respondents from their responses to the questionnaire."@en,
         "Instrumento de coleta de dados utilizado para obter informações fornecidas por respondentes a partir de suas respostas ao questionário."@pt-br .
 
@@ -692,6 +696,9 @@
 
 :hasLicenceType rdfs:comment "Defines the type of licence that applies to a questionnaire."@en,
                              "Define o tipo de licença que se aplica a um questionário."@pt-br .
+
+:hasNextSection rdfs:comment "Connects a section to the next section, indicating the navigation sequence between sections in the questionnaire."@en,
+                 "Conecta uma seção à próxima, indicando a sequência de navegação entre seções no questionário."@pt-br .
 
 :hasOriginType rdfs:comment "Specifies the type of source linked to the origin of a question, indicating whether it is original, literal copy, adaptation to context, term substitution, or translation"@en,
                             "Especifica o tipo de origem vinculado à origem de uma questão, indicando se ela é original, cópia literal, adaptação ao contexto, substituição de termos ou tradução."@pt-br .
@@ -799,6 +806,9 @@
 :hasMaximumValue rdfs:comment "Specifies the upper bound of values allowed for a quantitative response."@en,
                               "Especifica o limite superior de valores permitidos para uma resposta quantitativa."@pt-br .
 
+:hasMeasurementInstructions rdfs:comment "Specifies instructions for calculating a latent variable."@en,
+                             "Especifica as instruções para calcular uma variável latente."@pt-br .                              
+
 :hasMediaRepresentation rdfs:comment "Associates a media representation such as image, audio, or video with a question or questionnaire."@en,
                                      "Associa uma representação midiática como imagem, áudio ou vídeo a uma questão ou questionário."@pt-br .
 
@@ -817,7 +827,7 @@
 :hasOrder rdfs:comment "Indicates the sequential order of presentation or application of an item."@en,
                        "Indica a ordem sequencial de apresentação ou aplicação de um item."@pt-br .
 
-:hasOwner rdfs:comment "Relates an entity to the organization or individual responsible for its maintenance or authorship."@en,
+:hasOwnerName rdfs:comment "Relates an entity to the organization or individual responsible for its maintenance or authorship."@en,
                        "Relaciona uma entidade à organização ou indivíduo responsável por sua manutenção ou autoria."@pt-br .
 
 :hasPopulation rdfs:comment "Specifies the population or group targeted by the questionnaire."@en,
