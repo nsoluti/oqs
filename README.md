@@ -22,7 +22,7 @@ The file [`qc.doc`](./qc.doc) presents the SPARQL queries and their correspondin
 ## Ontology Documentation
 
 The complete documentation of the ontology, including detailed conceptual models, meta-properties, and usage guidelines, is available at:
-- [https://nsoluti.github.io/oqs.](https://nsoluti.github.io/oqs.)
+- [https://nsoluti.github.io/oqs](https://nsoluti.github.io/oqs)
 
 ## License
 
